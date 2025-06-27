@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Krishikaam – Our Mission and Story</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Styles from main page */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FBF9F4; /* Light Beige */
+            color: #3A3A3A; /* Dark Brown/Gray */
+        }
+        .text-brand-green { color: #4A6A50; }
+        .bg-brand-green { background-color: #4A6A50; }
+        .hover\:bg-brand-green-dark:hover { background-color: #3B5440; }
+        .text-brand-brown { color: #6B4F4F; }
+        .bg-brand-beige { background-color: #FBF9F4; }
+        .border-brand-green { border-color: #4A6A50; }
+
+        /* Fade-in animation on scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-brand-beige/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo and Tagline -->
+            <a href="index.html" class="flex flex-col cursor-pointer">
+                <h1 class="text-3xl font-extrabold text-brand-green">Krishikaam</h1>
+                <p class="text-xs text-brand-brown hidden sm:block" data-key="tagline">Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture</p>
+            </a>
+            
+            <!-- Navigation & CTAs -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <div class="relative group">
+                     <button class="bg-brand-green text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 text-sm sm:text-base" data-key="joinButton">
+                        Join Krishikaam
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48 right-0">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinFarmer">Join as Farmer</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinOperator">Join as Drone Operator</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-gray-500 hover:text-brand-green">
+                        <i data-lucide="globe"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-32 right-0">
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="en">English</a>
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="hi">हिन्दी</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Us Hero Section -->
+        <section class="py-16 md:py-24 bg-green-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-brand-green leading-tight mb-4" data-key="aboutTitle">
+                    About Krishikaam
+                </h2>
+                <p class="text-lg md:text-xl text-brand-brown max-w-3xl mx-auto" data-key="aboutSubtitle">
+                    We are dedicated to bringing the power of modern technology to every small farmer in India, ensuring a future that is profitable, sustainable, and secure.
+                </p>
+            </div>
+        </section>
+
+        <!-- Our Mission & Story Section -->
+        <section class="py-16 md:py-24 bg-white fade-in-section">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop" 
+                         alt="Team discussing plans" 
+                         class="rounded-lg shadow-xl w-full h-full object-cover"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/a3e635/4d7c0f?text=Our+Team';">
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-extrabold text-brand-green" data-key="missionTitle">Our Mission</h3>
+                    <p class="text-brand-brown" data-key="missionDesc">Our mission is simple: to empower the 100 million smallholder farmers of India. We bridge the gap between traditional farming and modern technology by providing easy-to-use tools that increase efficiency, boost profits, and promote safe agricultural practices. From drone spraying to direct market access, we've built a single platform that addresses the core challenges farmers face every day.</p>
+                    <p class="text-brand-brown" data-key="storyDesc">Krishikaam was born from a desire to make a real difference. After seeing firsthand the struggles of rural farming communities, we knew that technology, if made accessible, could be a powerful force for change. We started with a single drone in one village and have grown into a nationwide network of farmers, operators, and local agents, all working together to cultivate a better future.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values Section -->
+        <section class="py-16 md:py-24 bg-brand-beige fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-green" data-key="valuesTitle">Our Core Values</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="bg-white text-brand-green w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"><i data-lucide="tractor" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="value1Title">Farmer First</h3>
+                        <p class="text-brand-brown" data-key="value1Desc">Every tool we build and every service we offer is designed to create tangible value for the farmer.</p>
+                    </div>
+                    <div>
+                        <div class="bg-white text-brand-green w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"><i data-lucide="lightbulb" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="value2Title">Accessible Innovation</h3>
+                        <p class="text-brand-brown" data-key="value2Desc">We make complex technology simple and affordable, ensuring it can be used by anyone, anywhere.</p>
+                    </div>
+                    <div>
+                        <div class="bg-white text-brand-green w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"><i data-lucide="handshake" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="value3Title">Building Trust</h3>
+                        <p class="text-brand-brown" data-key="value3Desc">We operate with transparency and integrity, building lasting relationships with our community.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Us CTA Section -->
+        <section class="bg-brand-green text-white">
+            <div class="container mx-auto px-6 py-16 text-center">
+                <h2 class="text-3xl font-bold mb-4" data-key="joinTitle">Join Our Mission</h2>
+                <p class="max-w-2xl mx-auto mb-8" data-key="joinDesc">Whether you are a farmer, a drone pilot, or a tech enthusiast, there's a place for you at Krishikaam. Let's grow India's future together.</p>
+                <a href="krishikaam_landing_page.html#contact" class="bg-white text-brand-green font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105" data-key="joinContact">
+                    Get In Touch
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-green text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-2">Krishikaam</h3>
+                    <p class="mb-4 max-w-md" data-key="footerTagline">Let’s grow India’s future together.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:opacity-75"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerCompany">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline" data-key="footerAbout">About Us</a></li>
+                        <li><a href="career.html" class="hover:underline" data-key="footerCareers">Careers</a></li>
+                        <li><a href="#" class="hover:underline" data-key="footerBlog">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerSupport">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="join_as_operator.html" class="hover:underline" data-key="footerJoinOperator">Join as Operator</a></li>
+                        <li><a href="krishi_mitra.html" class="hover:underline" data-key="footerJoinMitra">Become a Krishi Mitra</a></li>
+                        <li><a href="contact_and_support.html" class="hover:underline" data-key="footerContact">Contact & Support</a></li>
+                        <li><a href="privacy_policy.html" class="hover:underline" data-key="footerPrivacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-green-400/50 pt-6 text-center text-sm">
+                <p data-key="footerRights">&copy; 2024 Krishikaam. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Translation Data
+        const translations = {
+            en: {
+                tagline: "Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture",
+                joinButton: "Join Krishikaam",
+                joinFarmer: "Join as Farmer",
+                joinOperator: "Join as Drone Operator",
+                aboutTitle: "About Krishikaam",
+                aboutSubtitle: "We are dedicated to bringing the power of modern technology to every small farmer in India, ensuring a future that is profitable, sustainable, and secure.",
+                missionTitle: "Our Mission",
+                missionDesc: "Our mission is simple: to empower the 100 million smallholder farmers of India. We bridge the gap between traditional farming and modern technology by providing easy-to-use tools that increase efficiency, boost profits, and promote safe agricultural practices. From drone spraying to direct market access, we've built a single platform that addresses the core challenges farmers face every day.",
+                storyDesc: "Krishikaam was born from a desire to make a real difference. After seeing firsthand the struggles of rural farming communities, we knew that technology, if made accessible, could be a powerful force for change. We started with a single drone in one village and have grown into a nationwide network of farmers, operators, and local agents, all working together to cultivate a better future.",
+                valuesTitle: "Our Core Values",
+                value1Title: "Farmer First",
+                value1Desc: "Every tool we build and every service we offer is designed to create tangible value for the farmer.",
+                value2Title: "Accessible Innovation",
+                value2Desc: "We make complex technology simple and affordable, ensuring it can be used by anyone, anywhere.",
+                value3Title: "Building Trust",
+                value3Desc: "We operate with transparency and integrity, building lasting relationships with our community.",
+                joinTitle: "Join Our Mission",
+                joinDesc: "Whether you are a farmer, a drone pilot, or a tech enthusiast, there's a place for you at Krishikaam. Let's grow India's future together.",
+                joinContact: "Get In Touch",
+                footerTagline: "Let’s grow India’s future together.",
+                footerCompany: "Company",
+                footerAbout: "About Us",
+                footerCareers: "Careers",
+                footerBlog: "Blog",
+                footerSupport: "Support",
+                footerJoinOperator: "Join as Operator",
+                footerJoinMitra: "Become a Krishi Mitra",
+                footerContact: "Contact & Support",
+                footerPrivacy: "Privacy Policy",
+                footerRights: "&copy; 2024 Krishikaam. All Rights Reserved.",
+            },
+            hi: {
+                tagline: "10 करोड़ छोटे किसानों को स्मार्ट, लाभदायक और सुरक्षित कृषि के साथ सशक्त बनाना",
+                joinButton: "कृषिकाम से जुड़ें",
+                joinFarmer: "किसान के रूप में जुड़ें",
+                joinOperator: "ड्रोन ऑपरेटर के रूप में जुड़ें",
+                aboutTitle: "कृषिकाम के बारे में",
+                aboutSubtitle: "हम भारत के हर छोटे किसान तक आधुनिक तकनीक की शक्ति लाने के लिए समर्पित हैं, जिससे एक लाभदायक, टिकाऊ और सुरक्षित भविष्य सुनिश्चित हो सके।",
+                missionTitle: "हमारा लक्ष्य",
+                missionDesc: "हमारा मिशन सरल है: भारत के 10 करोड़ छोटे किसानों को सशक्त बनाना। हम पारंपरिक खेती और आधुनिक तकनीक के बीच की खाई को पाटते हैं, ऐसे उपयोग में आसान उपकरण प्रदान करके जो दक्षता बढ़ाते हैं, मुनाफा बढ़ाते हैं, और सुरक्षित कृषि पद्धतियों को बढ़ावा देते हैं। ड्रोन छिड़काव से लेकर सीधे बाजार पहुंच तक, हमने एक ऐसा मंच बनाया है जो किसानों की मुख्य चुनौतियों का समाधान करता है।",
+                storyDesc: "कृषिकाम एक वास्तविक बदलाव लाने की इच्छा से पैदा हुआ था। ग्रामीण कृषक समुदायों के संघर्षों को प्रत्यक्ष रूप से देखने के बाद, हम जानते थे कि यदि प्रौद्योगिकी को सुलभ बनाया जाए, तो यह परिवर्तन के लिए एक शक्तिशाली शक्ति हो सकती है। हमने एक गांव में एक ड्रोन के साथ शुरुआत की और अब हम किसानों, ऑपरेटरों और स्थानीय एजेंटों के एक राष्ट्रव्यापी नेटवर्क में विकसित हो गए हैं, जो सभी एक बेहतर भविष्य के लिए मिलकर काम कर रहे हैं।",
+                valuesTitle: "हमारे मूल मूल्य",
+                value1Title: "किसान पहले",
+                value1Desc: "हमारा हर उपकरण और हर सेवा किसान के लिए वास्तविक मूल्य बनाने के लिए डिज़ाइन की गई है।",
+                value2Title: "सुलभ नवाचार",
+                value2Desc: "हम जटिल तकनीक को सरल और सस्ता बनाते हैं, यह सुनिश्चित करते हुए कि इसका उपयोग कोई भी, कहीं भी कर सकता है।",
+                value3Title: "विश्वास का निर्माण",
+                value3Desc: "हम पारदर्शिता और ईमानदारी के साथ काम करते हैं, अपने समुदाय के साथ स्थायी संबंध बनाते हैं।",
+                joinTitle: "हमारे मिशन में शामिल हों",
+                joinDesc: "चाहे आप किसान हों, ड्रोन पायलट हों, या तकनीक के प्रति उत्साही हों, कृषिकाम में आपके लिए एक जगह है। आइए मिलकर भारत का भविष्य उगाएं।",
+                joinContact: "संपर्क में रहें",
+                footerTagline: "आइए मिलकर भारत का भविष्य उगाएं।",
+                footerCompany: "कंपनी",
+                footerAbout: "हमारे बारे में",
+                footerCareers: "करियर",
+                footerBlog: "ब्लॉग",
+                footerSupport: "सहायता",
+                footerJoinOperator: "ऑपरेटर के रूप में जुड़ें",
+                footerJoinMitra: "कृषि मित्र बनें",
+                footerContact: "संपर्क और सहायता",
+                footerPrivacy: "गोपनीयता नीति",
+                footerRights: "&copy; 2024 कृषिकाम। सर्वाधिकार सुरक्षित।",
+            }
+        };
+
+        // Function to switch language
+        function switchLanguage(lang) {
+            if (!translations[lang]) return;
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.dataset.key;
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- Lucide Icons Activation ---
+            lucide.createIcons();
+
+            // --- Fade-in Animations ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => observer.observe(section));
+
+            // --- Language Switcher Logic ---
+            const langSwitchers = document.querySelectorAll('.lang-switcher');
+            langSwitchers.forEach(switcher => {
+                switcher.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = e.target.dataset.lang;
+                    switchLanguage(lang);
+                });
+            });
+
+            // Set default language on load
+            switchLanguage('en');
+        });
+    </script>
+</body>
+</html>

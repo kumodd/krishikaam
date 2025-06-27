@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join as a Drone Operator - Krishikaam</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Styles from main page */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FBF9F4; /* Light Beige */
+            color: #3A3A3A; /* Dark Brown/Gray */
+        }
+        .text-brand-green { color: #4A6A50; }
+        .bg-brand-green { background-color: #4A6A50; }
+        .hover\:bg-brand-green-dark:hover { background-color: #3B5440; }
+        .text-brand-brown { color: #6B4F4F; }
+        .bg-brand-beige { background-color: #FBF9F4; }
+        .border-brand-green { border-color: #4A6A50; }
+
+        /* Fade-in animation on scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-brand-beige/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo and Tagline -->
+            <a href="index.html" class="flex flex-col cursor-pointer">
+                <h1 class="text-3xl font-extrabold text-brand-green">Krishikaam</h1>
+                <p class="text-xs text-brand-brown hidden sm:block" data-key="tagline">Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture</p>
+            </a>
+            
+            <!-- Navigation & CTAs -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <div class="relative group">
+                     <button class="bg-brand-green text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 text-sm sm:text-base" data-key="joinButton">
+                        Join Krishikaam
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48 right-0">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinFarmer">Join as Farmer</a>
+                        <a href="krishikaam_join_mitra_page.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinMitra">Become a Krishi Mitra</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-gray-500 hover:text-brand-green">
+                        <i data-lucide="globe"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-32 right-0">
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="en">English</a>
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="hi">हिन्दी</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Join Hero Section -->
+        <section class="py-16 md:py-24 bg-green-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-brand-green leading-tight mb-4" data-key="heroTitle">
+                    Join as a Drone Operator
+                </h2>
+                <p class="text-lg md:text-xl text-brand-brown max-w-3xl mx-auto" data-key="heroSubtitle">
+                    Put your drone skills to work for a greater purpose. Join India's largest agri-drone network and help farmers revolutionize their practices.
+                </p>
+            </div>
+        </section>
+
+        <!-- Why Join as an Operator Section -->
+        <section class="py-16 md:py-24 bg-white fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-green" data-key="whyTitle">Why Partner with Krishikaam?</h2>
+                    <p class="text-lg text-brand-brown mt-2" data-key="whySubtitle">We provide the platform, you provide the skill. Together, we create impact.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <!-- Benefit 1: Steady Work -->
+                    <div>
+                        <div class="bg-green-100 text-brand-green w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"><i data-lucide="calendar-days" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="b1Title">Get Steady Work</h3>
+                        <p class="text-brand-brown" data-key="b1Desc">Access a constant stream of drone spraying jobs in your area. We handle the bookings so you can focus on flying.</p>
+                    </div>
+                    <!-- Benefit 2: Prompt Payments -->
+                    <div>
+                        <div class="bg-green-100 text-brand-green w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"><i data-lucide="wallet" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="b2Title">Prompt & Fair Payments</h3>
+                        <p class="text-brand-brown" data-key="b2Desc">Receive timely payments for every job you complete. We offer competitive rates and transparent payment cycles.</p>
+                    </div>
+                    <!-- Benefit 3: Be a Pioneer -->
+                    <div>
+                        <div class="bg-green-100 text-brand-green w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"><i data-lucide="rocket" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="b3Title">Be a Part of the Future</h3>
+                        <p class="text-brand-brown" data-key="b3Desc">Join a pioneering network that is transforming Indian agriculture. Get access to the latest technology and best practices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Requirements Section -->
+        <section class="py-16 md:py-24 bg-brand-beige fade-in-section">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h3 class="text-3xl font-extrabold text-brand-green" data-key="reqTitle">Operator Requirements</h3>
+                    <p class="text-brand-brown mt-4 mb-6" data-key="reqDesc">To join our network, you must have:</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="text-brand-green w-6 h-6 mr-3 mt-1 flex-shrink-0"></i>
+                            <span class="text-brand-brown" data-key="req1">A valid DGCA-certified drone pilot license.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="text-brand-green w-6 h-6 mr-3 mt-1 flex-shrink-0"></i>
+                            <span class="text-brand-brown" data-key="req2">Your own agriculture drone (10-16 litre capacity preferred).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="text-brand-green w-6 h-6 mr-3 mt-1 flex-shrink-0"></i>
+                            <span class="text-brand-brown" data-key="req3">A strong understanding of drone operations and safety protocols.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="text-brand-green w-6 h-6 mr-3 mt-1 flex-shrink-0"></i>
+                            <span class="text-brand-brown" data-key="req4">A commitment to professionalism and quality service.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1628202448395-688a7561a093?q=80&w=2574&auto=format&fit=crop" 
+                         alt="A drone pilot operating a drone in a field" 
+                         class="rounded-lg shadow-xl w-full h-full object-cover"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/a3e635/4d7c0f?text=Drone+Operator';">
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Form Section -->
+        <section id="apply-form-section" class="py-16 md:py-24 bg-white fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-green" data-key="formTitle">Apply to Join Our Network</h2>
+                    <p class="text-lg text-brand-brown mt-2" data-key="formSubtitle">Ready to fly with us? Fill out the application form below.</p>
+                    <p class="text-sm text-gray-500 mt-2" data-key="formNote">Note: Submitting this form will open your default email application.</p>
+                </div>
+                <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                    <form id="operator-application-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-brand-brown font-semibold mb-2" data-key="formName">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-brand-brown font-semibold mb-2" data-key="formPhone">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="location" class="block text-brand-brown font-semibold mb-2" data-key="formLocation">Operating Location (District, State)</label>
+                                <input type="text" id="location" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required>
+                            </div>
+                            <div>
+                                <label for="drone-model" class="block text-brand-brown font-semibold mb-2" data-key="formDrone">Drone Model & Capacity</label>
+                                <input type="text" id="drone-model" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" placeholder="e.g., DJI Agras T20, 16L" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="experience" class="block text-brand-brown font-semibold mb-2" data-key="formExperience">Briefly describe your drone operating experience.</label>
+                            <textarea id="experience" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-brand-green text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105" data-key="formSubmit">
+                                Submit Application
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-green text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-2">Krishikaam</h3>
+                    <p class="mb-4 max-w-md" data-key="footerTagline">Let’s grow India’s future together.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:opacity-75"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerCompany">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about_us.html" class="hover:underline" data-key="footerAbout">About Us</a></li>
+                        <li><a href="career.html" class="hover:underline" data-key="footerCareers">Careers</a></li>
+                        <li><a href="#" class="hover:underline" data-key="footerBlog">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerSupport">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline" data-key="footerJoinOperator">Join as Operator</a></li>
+                        <li><a href="krishi_mitra.html" class="hover:underline" data-key="footerJoinMitra">Become a Krishi Mitra</a></li>
+                        <li><a href="contact_and_support.html" class="hover:underline" data-key="footerContact">Contact & Support</a></li>
+                        <li><a href="privacy_policy.html" class="hover:underline" data-key="footerPrivacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-green-400/50 pt-6 text-center text-sm">
+                <p data-key="footerRights">&copy; 2025 Krishikaam. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Translation Data
+        const translations = {
+            en: {
+                tagline: "Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture",
+                joinButton: "Join Krishikaam",
+                joinFarmer: "Join as Farmer",
+                joinMitra: "Become a Krishi Mitra",
+                heroTitle: "Join as a Drone Operator",
+                heroSubtitle: "Put your drone skills to work for a greater purpose. Join India's largest agri-drone network and help farmers revolutionize their practices.",
+                whyTitle: "Why Partner with Krishikaam?",
+                whySubtitle: "We provide the platform, you provide the skill. Together, we create impact.",
+                b1Title: "Get Steady Work",
+                b1Desc: "Access a constant stream of drone spraying jobs in your area. We handle the bookings so you can focus on flying.",
+                b2Title: "Prompt & Fair Payments",
+                b2Desc: "Receive timely payments for every job you complete. We offer competitive rates and transparent payment cycles.",
+                b3Title: "Be a Part of the Future",
+                b3Desc: "Join a pioneering network that is transforming Indian agriculture. Get access to the latest technology and best practices.",
+                reqTitle: "Operator Requirements",
+                reqDesc: "To join our network, you must have:",
+                req1: "A valid DGCA-certified drone pilot license.",
+                req2: "Your own agriculture drone (10-16 litre capacity preferred).",
+                req3: "A strong understanding of drone operations and safety protocols.",
+                req4: "A commitment to professionalism and quality service.",
+                formTitle: "Apply to Join Our Network",
+                formSubtitle: "Ready to fly with us? Fill out the application form below.",
+                formNote: "Note: Submitting this form will open your default email application.",
+                formName: "Full Name",
+                formPhone: "Phone Number",
+                formLocation: "Operating Location (District, State)",
+                formDrone: "Drone Model & Capacity",
+                formExperience: "Briefly describe your drone operating experience.",
+                formSubmit: "Submit Application",
+                footerTagline: "Let’s grow India’s future together.",
+                footerCompany: "Company",
+                footerAbout: "About Us",
+                footerCareers: "Careers",
+                footerBlog: "Blog",
+                footerSupport: "Support",
+                footerJoinOperator: "Join as Operator",
+                footerJoinMitra: "Become a Krishi Mitra",
+                footerContact: "Contact & Support",
+                footerPrivacy: "Privacy Policy",
+                footerRights: "&copy; 2024 Krishikaam. All Rights Reserved.",
+            },
+            hi: {
+                tagline: "10 करोड़ छोटे किसानों को स्मार्ट, लाभदायक और सुरक्षित कृषि के साथ सशक्त बनाना",
+                joinButton: "कृषिकाम से जुड़ें",
+                joinFarmer: "किसान के रूप में जुड़ें",
+                joinMitra: "कृषि मित्र बनें",
+                heroTitle: "ड्रोन ऑपरेटर के रूप में शामिल हों",
+                heroSubtitle: "अपने ड्रोन कौशल को एक बड़े उद्देश्य के लिए काम में लाएं। भारत के सबसे बड़े कृषि-ड्रोन नेटवर्क में शामिल हों और किसानों को उनकी प्रथाओं में क्रांति लाने में मदद करें।",
+                whyTitle: "कृषिकाम के साथ साझेदारी क्यों करें?",
+                whySubtitle: "हम मंच प्रदान करते हैं, आप कौशल प्रदान करते हैं। साथ मिलकर, हम प्रभाव पैदा करते हैं।",
+                b1Title: "नियमित काम पाएं",
+                b1Desc: "अपने क्षेत्र में ड्रोन छिड़काव नौकरियों की एक निरंतर धारा तक पहुंचें। हम बुकिंग संभालते हैं ताकि आप उड़ान पर ध्यान केंद्रित कर सकें।",
+                b2Title: "शीघ्र और उचित भुगतान",
+                b2Desc: "आपके द्वारा पूरे किए गए प्रत्येक कार्य के लिए समय पर भुगतान प्राप्त करें। हम प्रतिस्पर्धी दरों और पारदर्शी भुगतान चक्र प्रदान करते हैं।",
+                b3Title: "भविष्य का हिस्सा बनें",
+                b3Desc: "एक अग्रणी नेटवर्क में शामिल हों जो भारतीय कृषि को बदल रहा है। नवीनतम तकनीक और सर्वोत्तम प्रथाओं तक पहुंच प्राप्त करें।",
+                reqTitle: "ऑपरेटर आवश्यकताएँ",
+                reqDesc: "हमारे नेटवर्क में शामिल होने के लिए, आपके पास होना चाहिए:",
+                req1: "एक वैध डीजीसीए-प्रमाणित ड्रोन पायलट लाइसेंस।",
+                req2: "आपका अपना कृषि ड्रोन (10-16 लीटर क्षमता को प्राथमिकता)।",
+                req3: "ड्रोन संचालन और सुरक्षा प्रोटोकॉल की एक मजबूत समझ।",
+                req4: "व्यावसायिकता और गुणवत्तापूर्ण सेवा के प्रति प्रतिबद्धता।",
+                formTitle: "हमारे नेटवर्क में शामिल होने के लिए आवेदन करें",
+                formSubtitle: "हमारे साथ उड़ान भरने के लिए तैयार हैं? नीचे दिया गया आवेदन पत्र भरें।",
+                formNote: "नोट: यह फ़ॉर्म सबमिट करने पर आपका डिफ़ॉल्ट ईमेल एप्लिकेशन खुल जाएगा।",
+                formName: "पूरा नाम",
+                formPhone: "फ़ोन नंबर",
+                formLocation: "संचालन स्थान (जिला, राज्य)",
+                formDrone: "ड्रोन मॉडल और क्षमता",
+                formExperience: "संक्षेप में अपने ड्रोन संचालन अनुभव का वर्णन करें।",
+                formSubmit: "आवेदन जमा करें",
+                footerTagline: "आइए मिलकर भारत का भविष्य उगाएं।",
+                footerCompany: "कंपनी",
+                footerAbout: "हमारे बारे में",
+                footerCareers: "करियर",
+                footerBlog: "ब्लॉग",
+                footerSupport: "सहायता",
+                footerJoinOperator: "ऑपरेटर के रूप में जुड़ें",
+                footerJoinMitra: "कृषि मित्र बनें",
+                footerContact: "संपर्क और सहायता",
+                footerPrivacy: "गोपनीयता नीति",
+                footerRights: "&copy; 2024 कृषिकाम। सर्वाधिकार सुरक्षित।",
+            }
+        };
+
+        // Function to switch language
+        function switchLanguage(lang) {
+            if (!translations[lang]) return;
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.dataset.key;
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- Lucide Icons Activation ---
+            lucide.createIcons();
+
+            // --- Fade-in Animations ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => observer.observe(section));
+
+            // --- Language Switcher Logic ---
+            const langSwitchers = document.querySelectorAll('.lang-switcher');
+            langSwitchers.forEach(switcher => {
+                switcher.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = e.target.dataset.lang;
+                    switchLanguage(lang);
+                });
+            });
+
+            // Set default language on load
+            switchLanguage('en');
+            
+            // --- Application Form Submission ---
+            document.getElementById('operator-application-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const location = document.getElementById('location').value;
+                const droneModel = document.getElementById('drone-model').value;
+                const experience = document.getElementById('experience').value;
+                
+                const subject = "New Drone Operator Application from " + name;
+                
+                const body = `Hello,
+
+A new application to become a Drone Operator has been submitted:
+
+Name: ${name}
+Phone: ${phone}
+Location: ${location}
+Drone Model: ${droneModel}
+
+Experience:
+${experience}
+
+---
+This email was generated from the Krishikaam website.`;
+
+                const mailtoLink = `mailto:officialkrishikaam@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                
+                window.location.href = mailtoLink;
+                
+                setTimeout(() => {
+                     alert(document.documentElement.lang === 'hi' ? 'आपका आवेदन भेजने के लिए तैयार है! कृपया अपने ईमेल क्लाइंट में भेजें पर क्लिक करें।' : 'Your application is ready to be sent! Please click send in your email client.');
+                     e.target.reset();
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

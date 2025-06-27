@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join as a Farmer - Krishikaam</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Styles from main page */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FBF9F4; /* Light Beige */
+            color: #3A3A3A; /* Dark Brown/Gray */
+        }
+        .text-brand-green { color: #4A6A50; }
+        .bg-brand-green { background-color: #4A6A50; }
+        .hover\:bg-brand-green-dark:hover { background-color: #3B5440; }
+        .text-brand-brown { color: #6B4F4F; }
+        .bg-brand-beige { background-color: #FBF9F4; }
+        .border-brand-green { border-color: #4A6A50; }
+
+        /* Fade-in animation on scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Accordion styles */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        /* Snackbar styles */
+        .snackbar {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s 0.5s, opacity 0.5s linear;
+        }
+        .snackbar.show {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.5s linear;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-brand-beige/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo and Tagline -->
+            <a href="index.html" class="flex flex-col cursor-pointer">
+                <h1 class="text-3xl font-extrabold text-brand-green">Krishikaam</h1>
+                <p class="text-xs text-brand-brown hidden sm:block" data-key="tagline">Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture</p>
+            </a>
+            
+            <!-- Navigation & CTAs -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <div class="relative group">
+                     <button class="bg-brand-green text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 text-sm sm:text-base" data-key="joinButton">
+                        Join Krishikaam
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48 right-0">
+                        <a href="join_as_operator.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinOperator">Join as Drone Operator</a>
+                        <a href="#.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinMitra">Become a Krishi Mitra</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-gray-500 hover:text-brand-green">
+                        <i data-lucide="globe"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-32 right-0">
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="en">English</a>
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="hi">हिन्दी</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Join Hero Section -->
+        <section class="py-16 md:py-24 bg-green-50">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                 <div class="text-center md:text-left">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-brand-green leading-tight mb-4" data-key="heroTitle">
+                        Grow More, Earn More, and Stay Safe.
+                    </h2>
+                    <p class="text-lg md:text-xl text-brand-brown mb-8" data-key="heroSubtitle">
+                        Join thousands of farmers who are transforming their fields and their lives with Krishikaam.
+                    </p>
+                    <a href="#apply-form-section" class="bg-brand-green text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105" data-key="joinNowButton">
+                        Join Now
+                    </a>
+                </div>
+                <div>
+                     <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2670&auto=format&fit=crop" 
+                         alt="A happy farmer standing in a lush green field" 
+                         class="rounded-lg shadow-xl w-full h-full object-cover"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/a3e635/4d7c0f?text=Happy+Farmer';">
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Join Krishikaam Section -->
+        <section class="py-16 md:py-24 bg-white fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-green" data-key="whyTitle">How Krishikaam Helps You Succeed</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Benefit 1: Grow More -->
+                    <div class="bg-green-50 p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-brand-green text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="sprout" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2 text-center" data-key="b1Title">Grow More</h3>
+                        <p class="text-brand-brown text-center" data-key="b1Desc">Increase your crop yield with our precision drone spraying and expert AI-powered advice on what to grow and when.</p>
+                    </div>
+                    <!-- Benefit 2: Earn More -->
+                    <div class="bg-green-50 p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-brand-green text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="indian-rupee" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2 text-center" data-key="b2Title">Earn More</h3>
+                        <p class="text-brand-brown text-center" data-key="b2Desc">Sell your produce directly on our Krishi Mandi, cutting out middlemen. Get fair prices and instant UPI payments.</p>
+                    </div>
+                    <!-- Benefit 3: Stay Safe -->
+                    <div class="bg-green-50 p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-brand-green text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="shield-check" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2 text-center" data-key="b3Title">Stay Safe</h3>
+                        <p class="text-brand-brown text-center" data-key="b3Desc">Protect your health by avoiding direct contact with harmful pesticides and chemicals. Let our drones do the dangerous work.</p>
+                    </div>
+                    <!-- Benefit 4: Save Time -->
+                    <div class="bg-green-50 p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-brand-green text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="timer" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2 text-center" data-key="b4Title">Save Time & Money</h3>
+                        <p class="text-brand-brown text-center" data-key="b4Desc">Spray 1 acre in just 7 minutes. Get trusted inputs delivered to your door. Save hours of labor and reduce waste.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download App CTA Section -->
+        <section class="bg-brand-green text-white fade-in-section">
+            <div class="container mx-auto px-6 py-16 text-center">
+                <h2 class="text-3xl font-bold mb-4" data-key="ctaTitle">Get All Services in One Place</h2>
+                <p class="max-w-2xl mx-auto mb-8" data-key="ctaDesc">Download the Krishikaam app for the easiest way to book services, track your farm's performance, and sell your crops.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#" class="app-store-btn bg-black text-white rounded-lg px-6 py-3 flex items-center space-x-3 hover:bg-gray-800 transition-colors w-full sm:w-auto justify-center">
+                        <svg role="img" viewBox="0 0 24 24" class="h-7 w-7" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Google Play</title><path d="M22.47 10.99L3.42 0.41C2.46-.21 1.13.31.51 1.27c-.3.45-.43.96-.43 1.48v17.5c0 .52.13 1.03.43 1.48.62.96 1.95 1.48 2.91.86l19.05-10.58c.96-.53 1.48-1.86.86-2.82zM4.5 19.5V4.5l12.5 7.5-12.5 7.5z"/></svg>
+                        <div>
+                            <p class="text-xs text-left">GET IT ON</p>
+                            <p class="text-lg font-semibold text-left">Google Play</p>
+                        </div>
+                    </a>
+                    <a href="#" class="app-store-btn bg-black text-white rounded-lg px-6 py-3 flex items-center space-x-3 hover:bg-gray-800 transition-colors w-full sm:w-auto justify-center">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.423 3.002a2.365 2.365 0 0 0-1.536.642l-1.89 1.89a.2.2 0 0 1-.282 0l-1.89-1.89a2.365 2.365 0 0 0-1.536-.642C8.865 3.002 8 3.867 8 5.287c0 .905.474 1.353.91 1.684.437.332.91.56 1.536.56.626 0 1.1-.228 1.536-.56.437-.331.91-.779.91-1.684 0-1.42 1.135-2.285 2.557-2.285zM12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zm-1.06-6.075c.114.375.4.675.78.855.375.18.78.195 1.185.06.405-.135.78-.405.975-.81.195-.405.225-.855.06-1.305l-2.94-8.82a.2.2 0 0 0-.195-.15h-4.44a.2.2 0 0 0-.195.15l-2.94 8.82c-.165.45-.135.9.06 1.305.195.405.57.675.975.81.405.135.81.12 1.185-.06.375-.18.66-.48.78-.855l.84-2.52h3.3l.84 2.52zm-3.465-3.375l1.41-4.23h.15l1.41 4.23h-2.97z"/></svg>
+                        <div>
+                            <p class="text-xs text-left">Download on the</p>
+                            <p class="text-lg font-semibold text-left">App Store</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="py-16 md:py-24 bg-brand-beige fade-in-section">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-green" data-key="faqTitle">Your Questions Answered</h2>
+                </div>
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-left font-semibold text-brand-green">
+                            <span data-key="q1">How much does drone spraying cost?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 pt-0 text-brand-brown" data-key="a1">Our drone spraying service is very affordable, starting at just ₹59 per kathha. This is often cheaper and much more effective than manual spraying.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-left font-semibold text-brand-green">
+                            <span data-key="q2">Do I need a smartphone to use Krishikaam?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 pt-0 text-brand-brown" data-key="a2">While our app provides the best experience, you do not need a smartphone. You can access all our services by contacting your local Krishi Mitra agent or by calling our support number. We can also communicate with you via WhatsApp.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-left font-semibold text-brand-green">
+                            <span data-key="q3">How do I get paid when I sell on the Krishi Mandi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 pt-0 text-brand-brown" data-key="a3">Payments are made instantly to your bank account via UPI as soon as the buyer confirms the purchase. It's fast, secure, and transparent.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Form Section -->
+        <section id="apply-form-section" class="py-16 md:py-24 bg-white fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-green" data-key="formTitle">Start Your Journey with Krishikaam</h2>
+                    <p class="text-lg text-brand-brown mt-2" data-key="formSubtitle">Fill out this simple form and our local Krishi Mitra will contact you soon.</p>
+                    <p class="text-sm text-gray-500 mt-2" data-key="formNote">Note: Submitting this form will open your default email application.</p>
+                </div>
+                <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                    <form id="farmer-application-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-brand-brown font-semibold mb-2" data-key="formName">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-brand-brown font-semibold mb-2" data-key="formPhone">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="address" class="block text-brand-brown font-semibold mb-2" data-key="formAddress">Village / Block / District</label>
+                            <input type="text" id="address" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-brand-brown font-semibold mb-2" data-key="formServices">What services are you interested in?</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <label class="flex items-center space-x-3">
+                                    <input type="checkbox" name="service" value="Drone Spraying" class="h-5 w-5 rounded border-gray-300 text-brand-green focus:ring-brand-green">
+                                    <span class="text-brand-brown" data-key="service1">Drone Spraying</span>
+                                </label>
+                                <label class="flex items-center space-x-3">
+                                    <input type="checkbox" name="service" value="Krishi Mandi" class="h-5 w-5 rounded border-gray-300 text-brand-green focus:ring-brand-green">
+                                    <span class="text-brand-brown" data-key="service2">Selling Crops (Mandi)</span>
+                                </label>
+                                <label class="flex items-center space-x-3">
+                                    <input type="checkbox" name="service" value="Input Delivery" class="h-5 w-5 rounded border-gray-300 text-brand-green focus:ring-brand-green">
+                                    <span class="text-brand-brown" data-key="service3">Input Delivery</span>
+                                </label>
+                                <label class="flex items-center space-x-3">
+                                    <input type="checkbox" name="service" value="AI Advisor" class="h-5 w-5 rounded border-gray-300 text-brand-green focus:ring-brand-green">
+                                    <span class="text-brand-brown" data-key="service4">AI Crop Advice</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-brand-green text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105" data-key="formSubmit">
+                                Register Me
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-green text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-2">Krishikaam</h3>
+                    <p class="mb-4 max-w-md" data-key="footerTagline">Let’s grow India’s future together.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:opacity-75"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerCompany">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about_us.html" class="hover:underline" data-key="footerAbout">About Us</a></li>
+                        <li><a href="career.html" class="hover:underline" data-key="footerCareers">Careers</a></li>
+                        <li><a href="#" class="hover:underline" data-key="footerBlog">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerSupport">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="join_as_operator.html" class="hover:underline" data-key="footerJoinOperator">Join as Operator</a></li>
+                        <li><a href="krishi_mitra.html" class="hover:underline" data-key="footerJoinMitra">Become a Krishi Mitra</a></li>
+                        <li><a href="contact_and_support.html" class="hover:underline" data-key="footerContact">Contact & Support</a></li>
+                        <li><a href="privacy_policy.html" class="hover:underline" data-key="footerPrivacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-green-400/50 pt-6 text-center text-sm">
+                <p data-key="footerRights">&copy; 2025 Krishikaam. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Snackbar -->
+    <div id="snackbar" class="snackbar fixed bottom-5 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg">
+        <span data-key="snackbarText">Launching Soon! We're working hard to bring the app to you.</span>
+    </div>
+
+
+    <script>
+        // Language Translation Data
+        const translations = {
+            en: {
+                tagline: "Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture",
+                joinButton: "Join Krishikaam",
+                joinOperator: "Join as Drone Operator",
+                joinMitra: "Become a Krishi Mitra",
+                heroTitle: "Grow More, Earn More, and Stay Safe.",
+                heroSubtitle: "Join thousands of farmers who are transforming their fields and their lives with Krishikaam.",
+                joinNowButton: "Join Now",
+                whyTitle: "How Krishikaam Helps You Succeed",
+                b1Title: "Grow More",
+                b1Desc: "Increase your crop yield with our precision drone spraying and expert AI-powered advice on what to grow and when.",
+                b2Title: "Earn More",
+                b2Desc: "Sell your produce directly on our Krishi Mandi, cutting out middlemen. Get fair prices and instant UPI payments.",
+                b3Title: "Stay Safe",
+                b3Desc: "Protect your health by avoiding direct contact with harmful pesticides and chemicals. Let our drones do the dangerous work.",
+                b4Title: "Save Time & Money",
+                b4Desc: "Spray 1 acre in just 7 minutes. Get trusted inputs delivered to your door. Save hours of labor and reduce waste.",
+                ctaTitle: "Get All Services in One Place",
+                ctaDesc: "Download the Krishikaam app for the easiest way to book services, track your farm's performance, and sell your crops.",
+                faqTitle: "Your Questions Answered",
+                q1: "How much does drone spraying cost?",
+                a1: "Our drone spraying service is very affordable, starting at just ₹59 per kathha. This is often cheaper and much more effective than manual spraying.",
+                q2: "Do I need a smartphone to use Krishikaam?",
+                a2: "While our app provides the best experience, you do not need a smartphone. You can access all our services by contacting your local Krishi Mitra agent or by calling our support number. We can also communicate with you via WhatsApp.",
+                q3: "How do I get paid when I sell on the Krishi Mandi?",
+                a3: "Payments are made instantly to your bank account via UPI as soon as the buyer confirms the purchase. It's fast, secure, and transparent.",
+                formTitle: "Start Your Journey with Krishikaam",
+                formSubtitle: "Fill out this simple form and our local Krishi Mitra will contact you soon.",
+                formNote: "Note: Submitting this form will open your default email application.",
+                formName: "Full Name",
+                formPhone: "Phone Number",
+                formAddress: "Village / Block / District",
+                formServices: "What services are you interested in?",
+                service1: "Drone Spraying",
+                service2: "Selling Crops (Mandi)",
+                service3: "Input Delivery",
+                service4: "AI Crop Advice",
+                formSubmit: "Register Me",
+                snackbarText: "Launching Soon! We're working hard to bring the app to you.",
+                footerTagline: "Let’s grow India’s future together.",
+                footerCompany: "Company",
+                footerAbout: "About Us",
+                footerCareers: "Careers",
+                footerBlog: "Blog",
+                footerSupport: "Support",
+                footerJoinOperator: "Join as Operator",
+                footerJoinMitra: "Become a Krishi Mitra",
+                footerContact: "Contact & Support",
+                footerPrivacy: "Privacy Policy",
+                footerRights: "&copy; 2025 Krishikaam. All Rights Reserved.",
+            },
+            hi: {
+                tagline: "10 करोड़ छोटे किसानों को स्मार्ट, लाभदायक और सुरक्षित कृषि के साथ सशक्त बनाना",
+                joinButton: "कृषिकाम से जुड़ें",
+                joinOperator: "ड्रोन ऑपरेटर के रूप में जुड़ें",
+                joinMitra: "कृषि मित्र बनें",
+                heroTitle: "अधिक उगाएं, अधिक कमाएं, और सुरक्षित रहें।",
+                heroSubtitle: "उन हजारों किसानों से जुड़ें जो कृषिकाम के साथ अपने खेतों और अपने जीवन को बदल रहे हैं।",
+                joinNowButton: "अभी जुड़ें",
+                whyTitle: "कृषिकाम आपकी सफलता में कैसे मदद करता है",
+                b1Title: "अधिक उगाएं",
+                b1Desc: "हमारे सटीक ड्रोन छिड़काव और क्या और कब उगाना है, इस पर विशेषज्ञ एआई-संचालित सलाह के साथ अपनी फसल की उपज बढ़ाएं।",
+                b2Title: "अधिक कमाएं",
+                b2Desc: "बिचौलियों को हटाकर, हमारी कृषि मंडी पर सीधे अपनी उपज बेचें। उचित मूल्य और तत्काल यूपीआई भुगतान प्राप्त करें।",
+                b3Title: "सुरक्षित रहें",
+                b3Desc: "हानिकारक कीटनाशकों और रसायनों के सीधे संपर्क से बचकर अपने स्वास्थ्य की रक्षा करें। हमारे ड्रोन को खतरनाक काम करने दें।",
+                b4Title: "समय और पैसा बचाएं",
+                b4Desc: "सिर्फ 7 मिनट में 1 एकड़ स्प्रे करें। विश्वसनीय इनपुट अपने दरवाजे पर प्राप्त करें। घंटों की मेहनत बचाएं और बर्बादी कम करें।",
+                ctaTitle: "सभी सेवाएं एक ही स्थान पर पाएं",
+                ctaDesc: "सेवाएं बुक करने, अपने खेत के प्रदर्शन को ट्रैक करने और अपनी फसलें बेचने के सबसे आसान तरीके के लिए कृषिकाम ऐप डाउनलोड करें।",
+                faqTitle: "आपके सवालों के जवाब",
+                q1: "ड्रोन छिड़काव का कितना खर्च आता है?",
+                a1: "हमारी ड्रोन छिड़काव सेवा बहुत सस्ती है, जो केवल ₹59 प्रति कट्ठा से शुरू होती है। यह अक्सर हाथ से छिड़काव की तुलना में सस्ता और बहुत अधिक प्रभावी होता है।",
+                q2: "क्या मुझे कृषिकाम का उपयोग करने के लिए स्मार्टफोन की आवश्यकता है?",
+                a2: "हालांकि हमारा ऐप सबसे अच्छा अनुभव प्रदान करता है, आपको स्मार्टफोन की आवश्यकता नहीं है। आप अपने स्थानीय कृषि मित्र एजेंट से संपर्क करके या हमारे सहायता नंबर पर कॉल करके हमारी सभी सेवाओं का उपयोग कर सकते हैं। हम आपसे व्हाट्सएप के माध्यम से भी संवाद कर सकते हैं।",
+                q3: "जब मैं कृषि मंडी पर बेचता हूं तो मुझे भुगतान कैसे मिलता है?",
+                a3: "खरीदार द्वारा खरीद की पुष्टि करते ही भुगतान तुरंत आपके बैंक खाते में यूपीआई के माध्यम से कर दिया जाता है। यह तेज़, सुरक्षित और पारदर्शी है।",
+                formTitle: "कृषिकाम के साथ अपनी यात्रा शुरू करें",
+                formSubtitle: "यह सरल फॉर्म भरें और हमारे स्थानीय कृषि मित्र जल्द ही आपसे संपर्क करेंगे।",
+                formNote: "नोट: यह फ़ॉर्म सबमिट करने पर आपका डिफ़ॉल्ट ईमेल एप्लिकेशन खुल जाएगा।",
+                formName: "पूरा नाम",
+                formPhone: "फ़ोन नंबर",
+                formAddress: "गांव / ब्लॉक / जिला",
+                formServices: "आप किन सेवाओं में रुचि रखते हैं?",
+                service1: "ड्रोन छिड़काव",
+                service2: "फसल बेचना (मंडी)",
+                service3: "इनपुट डिलीवरी",
+                service4: "एआई फसल सलाह",
+                formSubmit: "मुझे पंजीकृत करें",
+                snackbarText: "जल्द ही लॉन्च हो रहा है! हम आप तक ऐप लाने के लिए कड़ी मेहनत कर रहे हैं।",
+                footerTagline: "आइए मिलकर भारत का भविष्य उगाएं।",
+                footerCompany: "कंपनी",
+                footerAbout: "हमारे बारे में",
+                footerCareers: "करियर",
+                footerBlog: "ब्लॉग",
+                footerSupport: "सहायता",
+                footerJoinOperator: "ऑपरेटर के रूप में जुड़ें",
+                footerJoinMitra: "कृषि मित्र बनें",
+                footerContact: "संपर्क और सहायता",
+                footerPrivacy: "गोपनीयता नीति",
+                footerRights: "&copy; 2025 Krishikaam। सर्वाधिकार सुरक्षित।",
+            }
+        };
+
+        // Function to switch language
+        function switchLanguage(lang) {
+            if (!translations[lang]) return;
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.dataset.key;
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- Lucide Icons Activation ---
+            lucide.createIcons();
+
+            // --- Fade-in Animations ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => observer.observe(section));
+
+            // --- Language Switcher Logic ---
+            const langSwitchers = document.querySelectorAll('.lang-switcher');
+            langSwitchers.forEach(switcher => {
+                switcher.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = e.target.dataset.lang;
+                    switchLanguage(lang);
+                });
+            });
+            
+            // --- Accordion Logic ---
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('i');
+                    
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        // Close other open accordions
+                        accordionHeaders.forEach(otherHeader => {
+                            const otherContent = otherHeader.nextElementSibling;
+                            if (otherContent.style.maxHeight) {
+                                otherContent.style.maxHeight = null;
+                                otherHeader.querySelector('i').style.transform = 'rotate(0deg)';
+                            }
+                        });
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // Set default language on load
+            switchLanguage('en');
+            
+            // --- Application Form Submission ---
+            document.getElementById('farmer-application-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const address = document.getElementById('address').value;
+                
+                const interestedServices = Array.from(document.querySelectorAll('input[name="service"]:checked'))
+                                                .map(cb => cb.value)
+                                                .join(', ');
+
+                const subject = "New Farmer Registration from " + name;
+                
+                const body = `Hello,
+
+A new farmer has registered for Krishikaam services:
+
+Name: ${name}
+Phone: ${phone}
+Address: ${address}
+
+Interested Services: ${interestedServices || 'None specified'}
+
+Please have a local Krishi Mitra contact them.
+
+---
+This email was generated from the Krishikaam website.`;
+
+                const mailtoLink = `mailto:officialkrishikaam@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                
+                window.location.href = mailtoLink;
+                
+                setTimeout(() => {
+                     alert(document.documentElement.lang === 'hi' ? 'आपका पंजीकरण भेजने के लिए तैयार है! कृपया अपने ईमेल क्लाइंट में भेजें पर क्लिक करें।' : 'Your registration is ready to be sent! Please click send in your email client.');
+                     e.target.reset();
+                }, 500);
+            });
+
+            // --- Snackbar Logic for App Download ---
+            const appStoreButtons = document.querySelectorAll('.app-store-btn');
+            const snackbar = document.getElementById('snackbar');
+
+            appStoreButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    snackbar.classList.add('show');
+                    setTimeout(() => {
+                        snackbar.classList.remove('show');
+                    }, 3000); // Hide after 3 seconds
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishikaam – One-Stop Smart Farming Platform for India’s Small Farmers</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FBF9F4; /* Light Beige */
+            color: #3A3A3A; /* Dark Brown/Gray */
+        }
+        .text-brand-green { color: #4A6A50; }
+        .bg-brand-green { background-color: #4A6A50; }
+        .hover\:bg-brand-green-dark:hover { background-color: #3B5440; }
+        .text-brand-brown { color: #6B4F4F; }
+        .bg-brand-beige { background-color: #FBF9F4; }
+        .border-brand-green { border-color: #4A6A50; }
+
+        /* Animation for floating drone */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Fade-in animation on scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Loading Spinner */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4A6A50;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Modal styles */
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        .modal-content {
+            transition: transform 0.25s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-brand-beige/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo and Tagline -->
+            <div class="flex flex-col">
+                <h1 class="text-3xl font-extrabold text-brand-green">Krishikaam</h1>
+                <p class="text-xs text-brand-brown hidden sm:block" data-key="tagline">Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture</p>
+            </div>
+            
+            <!-- Navigation & CTAs -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <div class="relative group">
+                     <button class="bg-brand-green text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 text-sm sm:text-base" data-key="joinButton">
+                        Join Krishikaam
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48 right-0">
+                        <a href="join_as_farmer.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinFarmer">Join as Farmer</a>
+                        <a href="join_as_operator.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinOperator">Join as Drone Operator</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-gray-500 hover:text-brand-green">
+                        <i data-lucide="globe"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-32 right-0">
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="en">English</a>
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="hi">हिन्दी</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-brand-green leading-tight mb-4" data-key="heroTitle">
+                        From Drone Spraying to Direct Selling.
+                    </h2>
+                    <p class="text-lg md:text-xl text-brand-brown mb-8" data-key="heroSubtitle">
+                        Everything a Farmer Needs, On One App.
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#features" class="bg-brand-green text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105" data-key="exploreButton">
+                            Explore Features
+                        </a>
+                        <a href="#contact" class="bg-white text-brand-green border-2 border-brand-green font-bold px-8 py-3 rounded-lg hover:bg-gray-50 transition-all duration-300" data-key="demoButton">
+                            Book Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-green-100 rounded-full aspect-square w-full max-w-md mx-auto overflow-hidden shadow-xl">
+                         <img src="https://images.unsplash.com/photo-1627920459694-a6332e5352a4?q=80&w=2592&auto=format&fit=crop" 
+                             alt="Farmer using drone technology in a field" 
+                             class="w-full h-full object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x600/a3e635/4d7c0f?text=Krishikaam';">
+                    </div>
+                    <!-- Floating Drone SVG -->
+                    <div class="absolute -top-8 -right-8 w-32 h-32 animate-float hidden md:block">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#4A6A50"><path d="M12.17,11.17l-2.83,2.83l-2-2l2.83-2.83l-2.17-2.17l-2.83,2.83c-0.39,0.39-0.39,1.02,0,1.41l2.83,2.83l-2.17,2.17l2.83,2.83c0.39,0.39,1.02,0.39,1.41,0l2.83-2.83l2.17,2.17l2.83-2.83c0.39-0.39,0.39-1.02,0-1.41l-2.83-2.83l2.17-2.17l-2.83-2.83c-0.39-0.39-1.02-0.39-1.41,0l-2.83,2.83l-2.17-2.17L12.17,11.17z M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12,20c-4.41,0-8-3.59-8-8s3.59-8,8-8s8,3.59,8,8S16.41,20,12,20z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Badges -->
+        <section class="py-8 bg-green-50">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="flex items-center justify-center space-x-2">
+                        <i data-lucide="shield-check" class="text-brand-green"></i>
+                        <span class="font-semibold text-brand-brown" data-key="badgeGovt">Govt. Approved</span>
+                    </div>
+                    <div class="flex items-center justify-center space-x-2">
+                         <i data-lucide="message-circle" class="text-brand-green"></i>
+                        <span class="font-semibold text-brand-brown" data-key="badgeSupport">24/7 WhatsApp Support</span>
+                    </div>
+                    <div class="flex items-center justify-center space-x-2">
+                        <i data-lucide="map-pin" class="text-brand-green"></i>
+                        <span class="font-semibold text-brand-brown" data-key="badgeVillages">10,000+ Villages Served</span>
+                    </div>
+                    <div class="flex items-center justify-center space-x-2">
+                        <i data-lucide="credit-card" class="text-brand-green"></i>
+                        <span class="font-semibold text-brand-brown" data-key="badgePayments">Secure UPI Payments</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-16 md:py-24 bg-white fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-green" data-key="featuresTitle">One Platform, Endless Possibilities</h2>
+                    <p class="text-lg text-brand-brown mt-2" data-key="featuresSubtitle">All the tools you need to succeed, right in your pocket.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Feature Cards -->
+                    <div class="bg-green-50 p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-brand-green text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4"><i data-lucide="drone"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="f1Title">Drone Spraying</h3>
+                        <p class="text-brand-brown" data-key="f1Desc">1 acre in 7 minutes. Starting at just ₹59/kathha for efficient crop protection.</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-brand-green text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4"><i data-lucide="droplets"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="f2Title">Water Access (Krishi Jal)</h3>
+                        <p class="text-brand-brown" data-key="f2Desc">Pay-per-use borewell access via a simple QR code scan. Water when you need it.</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-brand-green text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4"><i data-lucide="truck"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="f3Title">Input Delivery</h3>
+                        <p class="text-brand-brown" data-key="f3Desc">Get trusted fertilizers, seeds, and pesticides delivered directly to your doorstep.</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-brand-green text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4"><i data-lucide="shopping-basket"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="f4Title">Krishi Mandi</h3>
+                        <p class="text-brand-brown" data-key="f4Desc">Sell your crops directly to buyers and receive instant UPI payments. No middlemen.</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-brand-green text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4"><i data-lucide="brain-circuit"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="f5Title">AI Tools</h3>
+                        <p class="text-brand-brown" data-key="f5Desc">Smart Input Planner and Price Predictor to help you make informed decisions.</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-brand-green text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4"><i data-lucide="users"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="f6Title">Krishi Mitra Agents</h3>
+                        <p class="text-brand-brown" data-key="f6Desc">Local, on-ground support from trusted agents who understand your needs.</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-brand-green text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4"><i data-lucide="wifi-off"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="f7Title">Offline + WhatsApp</h3>
+                        <p class="text-brand-brown" data-key="f7Desc">Book services and get support even with low internet, via our app and WhatsApp.</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-brand-green text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4"><i data-lucide="layout-dashboard"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="f8Title">Dashboard & Insights</h3>
+                        <p class="text-brand-brown" data-key="f8Desc">Track your expenses, earnings, and farm performance all in one place.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Crop Advisor Section -->
+        <section id="ai-advisor" class="py-16 md:py-24 bg-brand-beige fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-green" data-key="advisorTitle">✨ Get Smart Crop Advice</h2>
+                    <p class="text-lg text-brand-brown mt-2" data-key="advisorSubtitle">Let our AI help you decide what to grow next for the best results.</p>
+                </div>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <div>
+                            <label for="location-input" class="block text-brand-brown font-semibold mb-2" data-key="advisorLocation">Your Location (District, State)</label>
+                            <input type="text" id="location-input" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" placeholder="e.g., Patna, Bihar">
+                        </div>
+                        <div>
+                            <label for="soil-type" class="block text-brand-brown font-semibold mb-2" data-key="advisorSoil">Soil Type</label>
+                            <select id="soil-type" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green">
+                                <option value="Alluvial" data-key="soilAlluvial">Alluvial (जलोढ़)</option>
+                                <option value="Black" data-key="soilBlack">Black (काली)</option>
+                                <option value="Red" data-key="soilRed">Red (लाल)</option>
+                                <option value="Laterite" data-key="soilLaterite">Laterite (लैटेराइट)</option>
+                                <option value="Desert" data-key="soilDesert">Desert (रेगिस्तानी)</option>
+                                <option value="Mountain" data-key="soilMountain">Mountain (पर्वतीय)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="month" class="block text-brand-brown font-semibold mb-2" data-key="advisorMonth">Current Month</label>
+                             <select id="month" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green">
+                                <option value="January" data-key="monthJan">January</option>
+                                <option value="February" data-key="monthFeb">February</option>
+                                <option value="March" data-key="monthMar">March</option>
+                                <option value="April" data-key="monthApr">April</option>
+                                <option value="May" data-key="monthMay">May</option>
+                                <option value="June" data-key="monthJun">June</option>
+                                <option value="July" data-key="monthJul">July</option>
+                                <option value="August" data-key="monthAug">August</option>
+                                <option value="September" data-key="monthSep">September</option>
+                                <option value="October" data-key="monthOct">October</option>
+                                <option value="November" data-key="monthNov">November</option>
+                                <option value="December" data-key="monthDec">December</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="text-center mb-6">
+                        <button id="get-advice-btn" class="bg-brand-green text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105" data-key="advisorButton">
+                            Get Advice
+                        </button>
+                    </div>
+                    <div id="advice-result" class="hidden mt-6 p-6 bg-green-50 rounded-lg"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="py-16 md:py-24 bg-white fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-green" data-key="testimonialsTitle">Trusted by Farmers Like You</h2>
+                    <p class="text-lg text-brand-brown mt-2" data-key="testimonialsSubtitle">Hear what our community has to say.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <p class="text-brand-brown italic mb-4" data-key="testimonial1">"Using Krishikaam's drone saved me two weeks of manual labor. The Krishi Mandi got me a 20% better price for my tomatoes. This app has changed my life."</p>
+                        <div class="flex items-center">
+                            <img class="w-12 h-12 rounded-full mr-4 object-cover" src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=2670&auto=format&fit=crop" alt="Farmer Ramesh Kumar" onerror="this.onerror=null;this.src='https://placehold.co/48x48/e2e8f0/4a5568?text=RK';">
+                            <div>
+                                <p class="font-bold text-brand-green" data-key="t1Name">Ramesh Kumar</p>
+                                <p class="text-sm text-gray-500" data-key="t1Location">Farmer, Punjab</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <p class="text-brand-brown italic mb-4" data-key="testimonial2">"As a drone operator, Krishikaam gives me a steady stream of work. The platform is easy to use, and payments are always on time. I'm proud to be helping farmers in my area."</p>
+                        <div class="flex items-center">
+                            <img class="w-12 h-12 rounded-full mr-4 object-cover" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=2574&auto=format&fit=crop" alt="Drone Operator Sunita Devi" onerror="this.onerror=null;this.src='https://placehold.co/48x48/e2e8f0/4a5568?text=SD';">
+                            <div>
+                                <p class="font-bold text-brand-green" data-key="t2Name">Sunit Deva</p>
+                                <p class="text-sm text-gray-500" data-key="t2Location">Drone Operator, Haryana</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="py-16 md:py-24 bg-brand-beige fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-green" data-key="howTitle">Get Started in 3 Simple Steps</h2>
+                </div>
+                <div class="relative">
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 border-t-2 border-dashed border-gray-300 -translate-y-1/2"></div>
+                    <div class="grid md:grid-cols-3 gap-12 relative">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-green-100 text-brand-green rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">1</div>
+                            <h3 class="font-bold text-xl text-brand-green mb-2" data-key="step1Title">Download or Contact</h3>
+                            <p class="text-brand-brown" data-key="step1Desc">Get the Krishikaam app or contact your local Krishi Mitra agent to get started.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-green-100 text-brand-green rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">2</div>
+                            <h3 class="font-bold text-xl text-brand-green mb-2" data-key="step2Title">Book a Service</h3>
+                            <p class="text-brand-brown" data-key="step2Desc">Choose from drone spraying, water access, input delivery, or other services.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-green-100 text-brand-green rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">3</div>
+                            <h3 class="font-bold text-xl text-brand-green mb-2" data-key="step3Title">Grow More, Earn More</h3>
+                            <p class="text-brand-brown" data-key="step3Desc">Use our tools to increase your yield and sell directly for better profits.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="py-16 md:py-24 bg-white fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-green" data-key="contactTitle">Get in Touch</h2>
+                    <p class="text-lg text-brand-brown mt-2" data-key="contactSubtitle">Have questions? We are here to help.</p>
+                </div>
+                <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                    <form id="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-brand-brown font-semibold mb-2" data-key="formName">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-brand-brown font-semibold mb-2" data-key="formPhone">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="location" class="block text-brand-brown font-semibold mb-2" data-key="formLocation">Village / City</label>
+                            <input type="text" id="location" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-brand-brown font-semibold mb-2" data-key="formMessage">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required></textarea>
+                        </div>
+                        <div id="ai-response-container" class="text-center mb-4"></div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-brand-green text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105" data-key="formSubmit">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-green text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-2">Krishikaam</h3>
+                    <p class="mb-4 max-w-md" data-key="footerTagline">Let’s grow India’s future together.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:opacity-75"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerCompany">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about_us.html" class="hover:underline" data-key="footerAbout">About Us</a></li>
+                        <li><a href="career.html" class="hover:underline" data-key="footerCareers">Careers</a></li>
+                        <li><a href="#" class="hover:underline" data-key="footerBlog">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerSupport">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="join_as_operator.html" class="hover:underline" data-key="footerJoinOperator">Join as Operator</a></li>
+                        <li><a href="krishi_mitra.html" class="hover:underline" data-key="footerJoinMitra">Become a Krishi Mitra</a></li>
+                        <li><a href="contact_and_support.html" class="hover:underline" data-key="footerContact">Contact & Support</a></li>
+                        <li><a href="privacy_policy.html" class="hover:underline" data-key="footerPrivacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-green-400/50 pt-6 text-center text-sm">
+                <p data-key="footerRights">&copy; 2025 Krishikaam. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- AI Response Modal -->
+    <div id="ai-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 opacity-0 pointer-events-none">
+        <div class="modal-content bg-white rounded-lg shadow-xl w-11/12 max-w-2xl p-6 md:p-8 transform scale-95">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold text-brand-green flex items-center">
+                    <i data-lucide="sparkles" class="mr-2"></i>
+                    <span data-key="modalTitle">Instant Answer</span>
+                </h3>
+                <button id="close-modal-btn" class="text-gray-500 hover:text-gray-800">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div id="modal-body" class="text-brand-brown max-h-[60vh] overflow-y-auto">
+                <!-- AI response will be injected here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Loading Indicator -->
+    <div id="loading-indicator" class="hidden fixed inset-0 z-50 bg-black bg-opacity-20 flex items-center justify-center">
+        <div class="loader"></div>
+    </div>
+
+    <script>
+        // Language Translation Data
+        const translations = {
+            en: {
+                tagline: "Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture",
+                joinButton: "Join Krishikaam",
+                joinFarmer: "Join as Farmer",
+                joinOperator: "Join as Drone Operator",
+                heroTitle: "From Drone Spraying to Direct Selling.",
+                heroSubtitle: "Everything a Farmer Needs, On One App.",
+                exploreButton: "Explore Features",
+                demoButton: "Book Demo",
+                badgeGovt: "Govt. Approved",
+                badgeSupport: "24/7 WhatsApp Support",
+                badgeVillages: "10,000+ Villages Served",
+                badgePayments: "Secure UPI Payments",
+                featuresTitle: "One Platform, Endless Possibilities",
+                featuresSubtitle: "All the tools you need to succeed, right in your pocket.",
+                f1Title: "Drone Spraying",
+                f1Desc: "1 acre in 7 minutes. Starting at just ₹59/kathha for efficient crop protection.",
+                f2Title: "Water Access (Krishi Jal)",
+                f2Desc: "Pay-per-use borewell access via a simple QR code scan. Water when you need it.",
+                f3Title: "Input Delivery",
+                f3Desc: "Get trusted fertilizers, seeds, and pesticides delivered directly to your doorstep.",
+                f4Title: "Krishi Mandi",
+                f4Desc: "Sell your crops directly to buyers and receive instant UPI payments. No middlemen.",
+                f5Title: "AI Tools",
+                f5Desc: "Smart Input Planner and Price Predictor to help you make informed decisions.",
+                f6Title: "Krishi Mitra Agents",
+                f6Desc: "Local, on-ground support from trusted agents who understand your needs.",
+                f7Title: "Offline + WhatsApp",
+                f7Desc: "Book services and get support even with low internet, via our app and WhatsApp.",
+                f8Title: "Dashboard & Insights",
+                f8Desc: "Track your expenses, earnings, and farm performance all in one place.",
+                advisorTitle: "✨ Get Smart Crop Advice",
+                advisorSubtitle: "Let our AI help you decide what to grow next for the best results.",
+                advisorLocation: "Your Location (District, State)",
+                advisorSoil: "Soil Type",
+                soilAlluvial: "Alluvial", soilBlack: "Black", soilRed: "Red", soilLaterite: "Laterite", soilDesert: "Desert", soilMountain: "Mountain",
+                advisorMonth: "Current Month",
+                monthJan: "January", monthFeb: "February", monthMar: "March", monthApr: "April", monthMay: "May", monthJun: "June", monthJul: "July", monthAug: "August", monthSep: "September", monthOct: "October", monthNov: "November", monthDec: "December",
+                advisorButton: "Get Advice",
+                testimonialsTitle: "Trusted by Farmers Like You",
+                testimonialsSubtitle: "Hear what our community has to say.",
+                testimonial1: `"Using Krishikaam's drone saved me two weeks of manual labor. The Krishi Mandi got me a 20% better price for my tomatoes. This app has changed my life."`,
+                t1Name: "Ramesh Kumar",
+                t1Location: "Farmer, Punjab",
+                testimonial2: `"As a drone operator, Krishikaam gives me a steady stream of work. The platform is easy to use, and payments are always on time. I'm proud to be helping farmers in my area."`,
+                t2Name: "Sunita Devi",
+                t2Location: "Drone Operator, Haryana",
+                howTitle: "Get Started in 3 Simple Steps",
+                step1Title: "Download or Contact",
+                step1Desc: "Get the Krishikaam app or contact your local Krishi Mitra agent to get started.",
+                step2Title: "Book a Service",
+                step2Desc: "Choose from drone spraying, water access, input delivery, or other services.",
+                step3Title: "Grow More, Earn More",
+                step3Desc: "Use our tools to increase your yield and sell directly for better profits.",
+                contactTitle: "Get in Touch",
+                contactSubtitle: "Have questions? We are here to help.",
+                formName: "Name",
+                formPhone: "Phone Number",
+                formLocation: "Village / City",
+                formMessage: "Message",
+                formSubmit: "Send Message",
+                formInstantAnswer: "✨ Get Instant Answer",
+                modalTitle: "Instant Answer",
+                footerTagline: "Let’s grow India’s future together.",
+                footerCompany: "Company",
+                footerAbout: "About Us",
+                footerCareers: "Careers",
+                footerBlog: "Blog",
+                footerSupport: "Support",
+                footerJoinOperator: "Join as Operator",
+                footerJoinMitra: "Become a Krishi Mitra",
+                footerContact: "Contact & Support",
+                footerPrivacy: "Privacy Policy",
+                footerRights: "&copy; 2024 Krishikaam. All Rights Reserved.",
+            },
+            hi: {
+                tagline: "10 करोड़ छोटे किसानों को स्मार्ट, लाभदायक और सुरक्षित कृषि के साथ सशक्त बनाना",
+                joinButton: "कृषिकाम से जुड़ें",
+                joinFarmer: "किसान के रूप में जुड़ें",
+                joinOperator: "ड्रोन ऑपरेटर के रूप में जुड़ें",
+                heroTitle: "ड्रोन छिड़काव से लेकर सीधी बिक्री तक।",
+                heroSubtitle: "एक किसान की हर ज़रूरत, एक ही ऐप पर।",
+                exploreButton: "सुविधाएँ देखें",
+                demoButton: "डेमो बुक करें",
+                badgeGovt: "सरकार द्वारा अनुमोदित",
+                badgeSupport: "24/7 व्हाट्सएप सहायता",
+                badgeVillages: "10,000+ गांवों में सेवा",
+                badgePayments: "सुरक्षित UPI भुगतान",
+                featuresTitle: "एक मंच, अनंत संभावनाएँ",
+                featuresSubtitle: "सफलता के लिए आवश्यक सभी उपकरण, सीधे आपकी जेब में।",
+                f1Title: "ड्रोन छिड़काव",
+                f1Desc: "1 एकड़ 7 मिनट में। कुशल फसल सुरक्षा के लिए केवल ₹59/कट्ठा से शुरू।",
+                f2Title: "जल पहुंच (कृषि जल)",
+                f2Desc: "एक साधारण QR कोड स्कैन के माध्यम से उपयोग-के-अनुसार बोरवेल का उपयोग करें। जब आपको पानी चाहिए।",
+                f3Title: "इनपुट डिलीवरी",
+                f3Desc: "विश्वसनीय उर्वरक, बीज और कीटनाशक सीधे आपके दरवाजे पर प्राप्त करें।",
+                f4Title: "कृषि मंडी",
+                f4Desc: "अपनी फसलें सीधे खरीदारों को बेचें और तत्काल UPI भुगतान प्राप्त करें। कोई बिचौलिया नहीं।",
+                f5Title: "एआई उपकरण",
+                f5Desc: "सूचित निर्णय लेने में आपकी मदद करने के लिए स्मार्ट इनपुट प्लानर और मूल्य भविष्यवक्ता।",
+                f6Title: "कृषि मित्र एजेंट",
+                f6Desc: "आपकी ज़रूरतों को समझने वाले विश्वसनीय एजेंटों से स्थानीय, जमीनी सहायता।",
+                f7Title: "ऑफलाइन + व्हाट्सएप",
+                f7Desc: "कम इंटरनेट होने पर भी हमारे ऐप और व्हाट्सएप के माध्यम से सेवाएं बुक करें और सहायता प्राप्त करें।",
+                f8Title: "डैशबोर्ड और अंतर्दृष्टि",
+                f8Desc: "अपने खर्चों, आय और खेत के प्रदर्शन को एक ही स्थान पर ट्रैक करें।",
+                advisorTitle: "✨ स्मार्ट फसल सलाह प्राप्त करें",
+                advisorSubtitle: "हमारे AI को आपकी मदद करने दें कि अगली बार सर्वोत्तम परिणामों के लिए क्या उगाना है।",
+                advisorLocation: "आपका स्थान (जिला, राज्य)",
+                advisorSoil: "मिट्टी का प्रकार",
+                soilAlluvial: "जलोढ़", soilBlack: "काली", soilRed: "लाल", soilLaterite: "लैटेराइट", soilDesert: "रेगिस्तानी", soilMountain: "पर्वतीय",
+                advisorMonth: "चालू महीना",
+                monthJan: "जनवरी", monthFeb: "फ़रवरी", monthMar: "मार्च", monthApr: "अप्रैल", monthMay: "मई", monthJun: "जून", monthJul: "जुलाई", monthAug: "अगस्त", monthSep: "सितंबर", monthOct: "अक्टूबर", monthNov: "नवंबर", monthDec: "दिसंबर",
+                advisorButton: "सलाह लें",
+                testimonialsTitle: "आप जैसे किसानों का भरोसा",
+                testimonialsSubtitle: "सुनें हमारे समुदाय का क्या कहना है।",
+                testimonial1: `"कृषिकाम के ड्रोन का उपयोग करने से मेरे दो सप्ताह की शारीरिक मेहनत बच गई। कृषि मंडी से मुझे अपने टमाटरों के लिए 20% बेहतर कीमत मिली। इस ऐप ने मेरी जिंदगी बदल दी है।"`,
+                t1Name: "रमेश कुमार",
+                t1Location: "किसान, पंजाब",
+                testimonial2: `"एक ड्रोन ऑपरेटर के रूप में, कृषिकाम मुझे लगातार काम देता है। प्लेटफॉर्म का उपयोग करना आसान है, और भुगतान हमेशा समय पर होता है। मुझे अपने क्षेत्र के किसानों की मदद करने पर गर्व है।"`,
+                t2Name: "सुनीता देवी",
+                t2Location: "ड्रोन ऑपरेटर, हरियाणा",
+                howTitle: "3 सरल चरणों में शुरुआत करें",
+                step1Title: "डाउनलोड करें या संपर्क करें",
+                step1Desc: "कृषिकाम ऐप प्राप्त करें या शुरू करने के लिए अपने स्थानीय कृषि मित्र एजेंट से संपर्क करें।",
+                step2Title: "एक सेवा बुक करें",
+                step2Desc: "ड्रोन छिड़काव, जल पहुंच, इनपुट डिलीवरी, या अन्य सेवाओं में से चुनें।",
+                step3Title: "अधिक उगाएं, अधिक कमाएं",
+                step3Desc: "अपनी उपज बढ़ाने और बेहतर मुनाफे के लिए सीधे बेचने के लिए हमारे उपकरणों का उपयोग करें।",
+                contactTitle: "संपर्क में रहें",
+                contactSubtitle: "कोई प्रश्न हैं? हम यहाँ मदद करने के लिए हैं।",
+                formName: "नाम",
+                formPhone: "फ़ोन नंबर",
+                formLocation: "गाँव / शहर",
+                formMessage: "संदेश",
+                formSubmit: "संदेश भेजें",
+                formInstantAnswer: "✨ तुरंत उत्तर पाएं",
+                modalTitle: "तुरंत उत्तर",
+                footerTagline: "आइए मिलकर भारत का भविष्य उगाएं।",
+                footerCompany: "कंपनी",
+                footerAbout: "हमारे बारे में",
+                footerCareers: "करियर",
+                footerBlog: "ब्लॉग",
+                footerSupport: "सहायता",
+                footerJoinOperator: "ऑपरेटर के रूप में जुड़ें",
+                footerJoinMitra: "कृषि मित्र बनें",
+                footerContact: "संपर्क और सहायता",
+                footerPrivacy: "गोपनीयता नीति",
+                footerRights: "&copy; 2024 कृषिकाम। सर्वाधिकार सुरक्षित।",
+            }
+        };
+
+        let currentLang = 'en';
+
+        // Function to switch language
+        function switchLanguage(lang) {
+            currentLang = lang;
+            if (!translations[lang]) return;
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.dataset.key;
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+
+        async function getGeminiResponse(prompt) {
+            const loadingIndicator = document.getElementById('loading-indicator');
+            loadingIndicator.classList.remove('hidden');
+
+            const apiKey = ""; // API key is handled by the environment
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+            
+            const payload = {
+                contents: [{ role: "user", parts: [{ text: prompt }] }]
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    return result.candidates[0].content.parts[0].text;
+                } else {
+                    return currentLang === 'hi' ? 'माफ़ कीजिए, मुझे कोई जवाब नहीं मिला। कृपया पुनः प्रयास करें।' : 'Sorry, I could not get a response. Please try again.';
+                }
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                return currentLang === 'hi' ? 'एक त्रुटि हुई। कृपया बाद में पुन प्रयास करें।' : 'An error occurred. Please try again later.';
+            } finally {
+                loadingIndicator.classList.add('hidden');
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- Lucide Icons Activation ---
+            lucide.createIcons();
+
+            // --- Fade-in Animations ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => observer.observe(section));
+
+            // --- Language Switcher Logic ---
+            const langSwitchers = document.querySelectorAll('.lang-switcher');
+            langSwitchers.forEach(switcher => {
+                switcher.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = e.target.dataset.lang;
+                    switchLanguage(lang);
+                });
+            });
+
+            // Set default language on load
+            switchLanguage('en');
+            
+            // --- AI Crop Advisor Logic ---
+            const getAdviceBtn = document.getElementById('get-advice-btn');
+            const adviceResultDiv = document.getElementById('advice-result');
+            
+            getAdviceBtn.addEventListener('click', async () => {
+                const location = document.getElementById('location-input').value;
+                const soil = document.getElementById('soil-type').value;
+                const month = document.getElementById('month').value;
+
+                if (!location) {
+                    alert(currentLang === 'hi' ? 'कृपया अपना स्थान दर्ज करें।' : 'Please enter your location.');
+                    return;
+                }
+                
+                adviceResultDiv.innerHTML = `<div class="flex justify-center"><div class="loader"></div></div>`;
+                adviceResultDiv.classList.remove('hidden');
+
+                const prompt = `You are an expert agricultural advisor for Krishikaam, an Indian smart farming platform. A farmer needs advice.
+                Location: ${location}
+                Soil Type: ${soil}
+                Month: ${month}
+                Please provide a list of 2-3 suitable crops to grow. For each crop, provide a brief reason why it's a good choice for this location, soil, and time of year. Also, mention one common risk or challenge for each crop and a simple tip to manage it. Keep the language simple and encouraging. Format the response in clear sections. The response should be in ${currentLang === 'hi' ? 'Hindi' : 'English'}.`;
+
+                const response = await getGeminiResponse(prompt);
+                adviceResultDiv.innerHTML = response.replace(/\n/g, '<br>');
+            });
+            
+            // --- AI Contact Form Responder ---
+            const messageTextarea = document.getElementById('message');
+            const aiResponseContainer = document.getElementById('ai-response-container');
+            
+            messageTextarea.addEventListener('input', () => {
+                if(messageTextarea.value.length > 10 && aiResponseContainer.children.length === 0) {
+                    const instantButton = document.createElement('button');
+                    instantButton.id = 'get-instant-answer-btn';
+                    instantButton.type = 'button';
+                    instantButton.className = 'bg-yellow-400 text-yellow-900 font-bold px-6 py-2 rounded-lg shadow-md hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105';
+                    instantButton.setAttribute('data-key', 'formInstantAnswer');
+                    instantButton.textContent = translations[currentLang].formInstantAnswer;
+                    aiResponseContainer.appendChild(instantButton);
+                    
+                    instantButton.addEventListener('click', handleInstantAnswer);
+                } else if (messageTextarea.value.length <= 10) {
+                    aiResponseContainer.innerHTML = '';
+                }
+            });
+
+            const modal = document.getElementById('ai-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const modalBody = document.getElementById('modal-body');
+
+            async function handleInstantAnswer() {
+                const userQuery = messageTextarea.value;
+                const prompt = `You are a helpful and friendly customer support agent for Krishikaam, an Indian smart farming platform. A user has a question. Your goal is to provide a clear and concise answer based on the information available on the Krishikaam website.
+                User's question: "${userQuery}"
+                Answer the user's question directly. If the question is about pricing, services, or how Krishikaam works, use the information from the landing page. If you don't know the answer, politely say that you don't have that information and suggest they submit the contact form to speak with a human agent. Keep the tone supportive. The response should be in ${currentLang === 'hi' ? 'Hindi' : 'English'}.`;
+                
+                const response = await getGeminiResponse(prompt);
+                modalBody.innerHTML = response.replace(/\n/g, '<br>');
+                showModal();
+            }
+
+            function showModal() {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.querySelector('.modal-content').classList.remove('scale-95');
+                lucide.createIcons(); // Re-render icons inside modal
+            }
+
+            function hideModal() {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modal.querySelector('.modal-content').classList.add('scale-95');
+            }
+
+            closeModalBtn.addEventListener('click', hideModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    hideModal();
+                }
+            });
+
+            document.getElementById('contact-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Handle actual form submission logic here (e.g., send data to a server)
+                alert(currentLang === 'hi' ? 'आपका संदेश भेज दिया गया है! हमारी टीम जल्द ही आपसे संपर्क करेगी।' : 'Your message has been sent! Our team will contact you shortly.');
+                e.target.reset();
+                aiResponseContainer.innerHTML = '';
+            });
+
+        });
+    </script>
+</body>
+</html>

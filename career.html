@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Join Our Team at Krishikaam</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Styles from main page */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FBF9F4; /* Light Beige */
+            color: #3A3A3A; /* Dark Brown/Gray */
+        }
+        .text-brand-green { color: #4A6A50; }
+        .bg-brand-green { background-color: #4A6A50; }
+        .hover\:bg-brand-green-dark:hover { background-color: #3B5440; }
+        .text-brand-brown { color: #6B4F4F; }
+        .bg-brand-beige { background-color: #FBF9F4; }
+        .border-brand-green { border-color: #4A6A50; }
+
+        /* Fade-in animation on scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Modal styles */
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        .modal-content {
+            transition: transform 0.25s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-brand-beige/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo and Tagline -->
+            <a href="index.html" class="flex flex-col cursor-pointer">
+                <h1 class="text-3xl font-extrabold text-brand-green">Krishikaam</h1>
+                <p class="text-xs text-brand-brown hidden sm:block" data-key="tagline">Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture</p>
+            </a>
+            
+            <!-- Navigation & CTAs -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <div class="relative group">
+                     <button class="bg-brand-green text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 text-sm sm:text-base" data-key="joinButton">
+                        Join Krishikaam
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48 right-0">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinFarmer">Join as Farmer</a>
+                        <a href="join_as_operator.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinOperator">Join as Drone Operator</a>
+                        <a href="krishi_mitra.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinMitra">Become a Krishi Mitra</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-gray-500 hover:text-brand-green">
+                        <i data-lucide="globe"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-32 right-0">
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="en">English</a>
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="hi">हिन्दी</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Careers Hero Section -->
+        <section class="py-16 md:py-24 bg-green-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-brand-green leading-tight mb-4" data-key="heroTitle">
+                    Join Our Team
+                </h2>
+                <p class="text-lg md:text-xl text-brand-brown max-w-3xl mx-auto" data-key="heroSubtitle">
+                    Help us build the future of agriculture in India. We're looking for passionate, innovative people to join our mission.
+                </p>
+            </div>
+        </section>
+
+        <!-- Why Work Here Section -->
+        <section class="py-16 md:py-24 bg-white fade-in-section">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h3 class="text-3xl font-extrabold text-brand-green" data-key="whyTitle">Why Work at Krishikaam?</h3>
+                    <p class="text-brand-brown mt-4 mb-6" data-key="whyDesc">Working at Krishikaam means you are directly contributing to a more prosperous and sustainable future for millions. We are a fast-paced, mission-driven team that values collaboration, innovation, and a deep respect for the communities we serve.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i data-lucide="bar-chart-3" class="text-brand-green w-6 h-6 mr-3 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-green" data-key="v1Title">Make a Real Impact</h4>
+                                <p class="text-brand-brown" data-key="v1Desc">Your work will directly affect the livelihoods of small farmers across the country.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="lightbulb" class="text-brand-green w-6 h-6 mr-3 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-green" data-key="v2Title">Innovate and Grow</h4>
+                                <p class="text-brand-brown" data-key="v2Desc">We tackle big challenges with modern solutions. You'll have the opportunity to learn and grow professionally.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="users" class="text-brand-green w-6 h-6 mr-3 mt-1 flex-shrink-0"></i>
+                             <div>
+                                <h4 class="font-bold text-brand-green" data-key="v3Title">Collaborative Culture</h4>
+                                <p class="text-brand-brown" data-key="v3Desc">Join a supportive and dynamic team that believes in working together to achieve our goals.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2670&auto=format&fit=crop" 
+                         alt="A modern office with a team collaborating" 
+                         class="rounded-lg shadow-xl w-full h-full object-cover"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/a3e635/4d7c0f?text=Our+Office';">
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Openings Section -->
+        <section id="openings" class="py-16 md:py-24 bg-brand-beige fade-in-section">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-green" data-key="openingsTitle">Current Openings</h2>
+                    <p class="text-lg text-brand-brown mt-2" data-key="openingsSubtitle">Find your next opportunity with us.</p>
+                </div>
+                <div class="space-y-6">
+                    <!-- Job Listings -->
+                    <div class="job-listing bg-white rounded-lg shadow-sm p-6 flex flex-col md:flex-row justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-xl text-brand-green" data-key="job1Title">Field Operations Manager</h3>
+                            <p class="text-brand-brown"><span data-key="jobLocation">Location:</span> Patna, Bihar | <span data-key="jobType">Type:</span> Full-time</p>
+                        </div>
+                        <button class="apply-btn mt-4 md:mt-0 bg-brand-green text-white font-semibold px-6 py-2 rounded-lg hover:bg-brand-green-dark transition-colors" data-position="Field Operations Manager" data-key="applyButton">Apply Now</button>
+                    </div>
+                    <div class="job-listing bg-white rounded-lg shadow-sm p-6 flex flex-col md:flex-row justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-xl text-brand-green" data-key="job2Title">Software Engineer (Android)</h3>
+                            <p class="text-brand-brown"><span data-key="jobLocation">Location:</span> Remote / Kaji Dumra | <span data-key="jobType">Type:</span> Full-time</p>
+                        </div>
+                        <button class="apply-btn mt-4 md:mt-0 bg-brand-green text-white font-semibold px-6 py-2 rounded-lg hover:bg-brand-green-dark transition-colors" data-position="Software Engineer (Android)" data-key="applyButton">Apply Now</button>
+                    </div>
+                    <div class="job-listing bg-white rounded-lg shadow-sm p-6 flex flex-col md:flex-row justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-xl text-brand-green" data-key="job3Title">Flutter Developer</h3>
+                            <p class="text-brand-brown"><span data-key="jobLocation">Location:</span> Remote | <span data-key="jobType">Type:</span> Full-time</p>
+                        </div>
+                        <button class="apply-btn mt-4 md:mt-0 bg-brand-green text-white font-semibold px-6 py-2 rounded-lg hover:bg-brand-green-dark transition-colors" data-position="Flutter Developer" data-key="applyButton">Apply Now</button>
+                    </div>
+                     <div class="job-listing bg-white rounded-lg shadow-sm p-6 flex flex-col md:flex-row justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-xl text-brand-green" data-key="job4Title">Spring Boot Java Developer</h3>
+                            <p class="text-brand-brown"><span data-key="jobLocation">Location:</span> Remote | <span data-key="jobType">Type:</span> Full-time</p>
+                        </div>
+                        <button class="apply-btn mt-4 md:mt-0 bg-brand-green text-white font-semibold px-6 py-2 rounded-lg hover:bg-brand-green-dark transition-colors" data-position="Spring Boot Java Developer" data-key="applyButton">Apply Now</button>
+                    </div>
+                    <div class="job-listing bg-white rounded-lg shadow-sm p-6 flex flex-col md:flex-row justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-xl text-brand-green" data-key="job5Title">Digital Marketing Specialist</h3>
+                            <p class="text-brand-brown"><span data-key="jobLocation">Location:</span> Remote | <span data-key="jobType">Type:</span> Contract</p>
+                        </div>
+                        <button class="apply-btn mt-4 md:mt-0 bg-brand-green text-white font-semibold px-6 py-2 rounded-lg hover:bg-brand-green-dark transition-colors" data-position="Digital Marketing Specialist" data-key="applyButton">Apply Now</button>
+                    </div>
+                    <div class="job-listing bg-yellow-100 border-l-4 border-yellow-400 p-6 flex flex-col md:flex-row justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-xl text-yellow-800" data-key="job6Title">Co-founder / Partner</h3>
+                            <p class="text-yellow-700"><span data-key="jobLocation">Location:</span> Kaji Dumra, Bihar | <span data-key="jobType">Type:</span> Equity-based</p>
+                        </div>
+                        <button class="apply-btn mt-4 md:mt-0 bg-yellow-400 text-yellow-900 font-semibold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-colors" data-position="Co-founder / Partner" data-key="applyButton">Apply Now</button>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <p class="text-brand-brown" data-key="noFit">Don't see a role that fits? We're always looking for talented people.</p>
+                    <a href="mailto:officialkrishikaam@gmail.com?subject=Spontaneous Application for Krishikaam" class="text-brand-green font-bold hover:underline" data-key="spontaneousApply">Send us your resume</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-green text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-2">Krishikaam</h3>
+                    <p class="mb-4 max-w-md" data-key="footerTagline">Let’s grow India’s future together.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:opacity-75"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerCompany">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about_us.html" class="hover:underline" data-key="footerAbout">About Us</a></li>
+                        <li><a href="#" class="hover:underline" data-key="footerCareers">Careers</a></li>
+                        <li><a href="#" class="hover:underline" data-key="footerBlog">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerSupport">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="join_as_operator.html" class="hover:underline" data-key="footerJoinOperator">Join as Operator</a></li>
+                        <li><a href="krishi_mitra.html" class="hover:underline" data-key="footerJoinMitra">Become a Krishi Mitra</a></li>
+                        <li><a href="contact_and_support.html" class="hover:underline" data-key="footerContact">Contact & Support</a></li>
+                        <li><a href="privacy_policy.html" class="hover:underline" data-key="footerPrivacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-green-400/50 pt-6 text-center text-sm">
+                <p data-key="footerRights">&copy; 2025 Krishikaam. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Application Modal -->
+    <div id="application-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 opacity-0 pointer-events-none">
+        <div class="modal-content bg-white rounded-lg shadow-xl w-11/12 max-w-2xl p-6 md:p-8 transform scale-95">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modal-title" class="text-2xl font-bold text-brand-green">Apply Now</h3>
+                <button id="close-modal-btn" class="text-gray-500 hover:text-gray-800">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <form id="modal-form">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                    <div>
+                        <label for="modal-name" class="block text-brand-brown font-semibold mb-2" data-key="formName">Full Name</label>
+                        <input type="text" id="modal-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required>
+                    </div>
+                    <div>
+                        <label for="modal-phone" class="block text-brand-brown font-semibold mb-2" data-key="formPhone">Phone Number</label>
+                        <input type="tel" id="modal-phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="modal-email" class="block text-brand-brown font-semibold mb-2" data-key="formEmail">Email Address</label>
+                    <input type="email" id="modal-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required>
+                </div>
+                
+                <!-- Role-specific fields will be injected here -->
+                <div id="role-specific-fields" class="mb-4"></div>
+
+                <div class="mb-6">
+                     <label for="modal-resume" class="block text-brand-brown font-semibold mb-2" data-key="formResume">Resume/CV</label>
+                     <p class="text-sm text-gray-500 mb-2" data-key="formResumeNote">Please mention a link to your resume (e.g., Google Drive, Dropbox) in the email body.</p>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="w-full bg-brand-green text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300" data-key="formSubmit">
+                        Submit Application
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Language Translation Data
+        const translations = {
+            en: {
+                tagline: "Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture",
+                joinButton: "Join Krishikaam",
+                joinFarmer: "Join as Farmer",
+                joinOperator: "Join as Drone Operator",
+                joinMitra: "Become a Krishi Mitra",
+                heroTitle: "Join Our Team",
+                heroSubtitle: "Help us build the future of agriculture in India. We're looking for passionate, innovative people to join our mission.",
+                whyTitle: "Why Work at Krishikaam?",
+                whyDesc: "Working at Krishikaam means you are directly contributing to a more prosperous and sustainable future for millions. We are a fast-paced, mission-driven team that values collaboration, innovation, and a deep respect for the communities we serve.",
+                v1Title: "Make a Real Impact",
+                v1Desc: "Your work will directly affect the livelihoods of small farmers across the country.",
+                v2Title: "Innovate and Grow",
+                v2Desc: "We tackle big challenges with modern solutions. You'll have the opportunity to learn and grow professionally.",
+                v3Title: "Collaborative Culture",
+                v3Desc: "Join a supportive and dynamic team that believes in working together to achieve our goals.",
+                openingsTitle: "Current Openings",
+                openingsSubtitle: "Find your next opportunity with us.",
+                jobLocation: "Location:",
+                jobType: "Type:",
+                job1Title: "Field Operations Manager",
+                job2Title: "Software Engineer (Android)",
+                job3Title: "Flutter Developer",
+                job4Title: "Spring Boot Java Developer",
+                job5Title: "Digital Marketing Specialist",
+                job6Title: "Co-founder / Partner",
+                applyButton: "Apply Now",
+                noFit: "Don't see a role that fits? We're always looking for talented people.",
+                spontaneousApply: "Send us your resume",
+                formName: "Full Name",
+                formPhone: "Phone Number",
+                formEmail: "Email Address",
+                formResume: "Resume/CV",
+                formResumeNote: "Please mention a link to your resume (e.g., Google Drive, Dropbox) in the email body.",
+                formGithub: "GitHub / Portfolio Link",
+                formExperienceField: "Describe your experience in field operations or agriculture.",
+                formExperienceMarketing: "Describe a successful marketing campaign you managed.",
+                formVisionCofounder: "Why do you want to co-found Krishikaam? What is your vision?",
+                formSubmit: "Submit Application",
+                footerTagline: "Let’s grow India’s future together.",
+                footerCompany: "Company",
+                footerAbout: "About Us",
+                footerCareers: "Careers",
+                footerBlog: "Blog",
+                footerSupport: "Support",
+                footerJoinOperator: "Join as Operator",
+                footerJoinMitra: "Become a Krishi Mitra",
+                footerContact: "Contact & Support",
+                footerPrivacy: "Privacy Policy",
+                footerRights: "&copy; 2024 Krishikaam. All Rights Reserved.",
+            },
+            hi: {
+                tagline: "10 करोड़ छोटे किसानों को स्मार्ट, लाभदायक और सुरक्षित कृषि के साथ सशक्त बनाना",
+                joinButton: "कृषिकाम से जुड़ें",
+                joinFarmer: "किसान के रूप में जुड़ें",
+                joinOperator: "ड्रोन ऑपरेटर के रूप में जुड़ें",
+                joinMitra: "कृषि मित्र बनें",
+                heroTitle: "हमारी टीम में शामिल हों",
+                heroSubtitle: "भारत में कृषि का भविष्य बनाने में हमारी मदद करें। हम अपने मिशन में शामिल होने के लिए जोशीले, नवोन्मेषी लोगों की तलाश कर रहे हैं।",
+                whyTitle: "कृषिकाम में काम क्यों करें?",
+                whyDesc: "कृषिकाम में काम करने का मतलब है कि आप लाखों लोगों के लिए अधिक समृद्ध और टिकाऊ भविष्य में सीधे योगदान दे रहे हैं। हम एक तेज-तर्रार, मिशन-संचालित टीम हैं जो सहयोग, नवाचार और उन समुदायों के प्रति गहरे सम्मान को महत्व देती है जिनकी हम सेवा करते हैं।",
+                v1Title: "वास्तविक प्रभाव डालें",
+                v1Desc: "आपका काम देश भर के छोटे किसानों की आजीविका को सीधे प्रभावित करेगा।",
+                v2Title: "नवाचार करें और बढ़ें",
+                v2Desc: "हम आधुनिक समाधानों के साथ बड़ी चुनौतियों का सामना करते हैं। आपके पास पेशेवर रूप से सीखने और बढ़ने का अवसर होगा।",
+                v3Title: "सहयोगी संस्कृति",
+                v3Desc: "एक सहायक और गतिशील टीम में शामिल हों जो हमारे लक्ष्यों को प्राप्त करने के लिए मिलकर काम करने में विश्वास करती है।",
+                openingsTitle: "वर्तमान रिक्तियाँ",
+                openingsSubtitle: "हमारे साथ अपना अगला अवसर खोजें।",
+                jobLocation: "स्थान:",
+                jobType: "प्रकार:",
+                job1Title: "फील्ड ऑपरेशंस मैनेजर",
+                job2Title: "सॉफ्टवेयर इंजीनियर (एंड्रॉइड)",
+                job3Title: "फ्लटर डेवलपर",
+                job4Title: "स्प्रिंग बूट जावा डेवलपर",
+                job5Title: "डिजिटल मार्केटिंग विशेषज्ञ",
+                job6Title: "सह-संस्थापक / भागीदार",
+                applyButton: "अभी आवेदन करें",
+                noFit: "क्या कोई ऐसी भूमिका नहीं दिख रही जो उपयुक्त हो? हम हमेशा प्रतिभाशाली लोगों की तलाश में रहते हैं।",
+                spontaneousApply: "हमें अपना बायोडाटा भेजें",
+                formName: "पूरा नाम",
+                formPhone: "फ़ोन नंबर",
+                formEmail: "ईमेल पता",
+                formResume: "बायोडाटा/सीवी",
+                formResumeNote: "कृपया ईमेल बॉडी में अपने बायोडाटा का एक लिंक (जैसे, गूगल ड्राइव, ड्रॉपबॉक्स) का उल्लेख करें।",
+                formGithub: "गिटहब / पोर्टफोलियो लिंक",
+                formExperienceField: "फील्ड संचालन या कृषि में अपने अनुभव का वर्णन करें।",
+                formExperienceMarketing: "आपके द्वारा प्रबंधित एक सफल विपणन अभियान का वर्णन करें।",
+                formVisionCofounder: "आप कृषिकाम के सह-संस्थापक क्यों बनना चाहते हैं? आपकी क्या दृष्टि है?",
+                formSubmit: "आवेदन जमा करें",
+                footerTagline: "आइए मिलकर भारत का भविष्य उगाएं।",
+                footerCompany: "कंपनी",
+                footerAbout: "हमारे बारे में",
+                footerCareers: "करियर",
+                footerBlog: "ब्लॉग",
+                footerSupport: "सहायता",
+                footerJoinOperator: "ऑपरेटर के रूप में जुड़ें",
+                footerJoinMitra: "कृषि मित्र बनें",
+                footerContact: "संपर्क और सहायता",
+                footerPrivacy: "गोपनीयता नीति",
+                footerRights: "&copy; 2024 कृषिकाम। सर्वाधिकार सुरक्षित।",
+            }
+        };
+
+        // Function to switch language
+        function switchLanguage(lang) {
+            if (!translations[lang]) return;
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.dataset.key;
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- Lucide Icons Activation ---
+            lucide.createIcons();
+
+            // --- Fade-in Animations ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => observer.observe(section));
+
+            // --- Language Switcher Logic ---
+            const langSwitchers = document.querySelectorAll('.lang-switcher');
+            langSwitchers.forEach(switcher => {
+                switcher.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = e.target.dataset.lang;
+                    switchLanguage(lang);
+                });
+            });
+
+            // Set default language on load
+            switchLanguage('en');
+            
+            // --- Modal Logic ---
+            const modal = document.getElementById('application-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const modalTitle = document.getElementById('modal-title');
+            const modalForm = document.getElementById('modal-form');
+            const roleSpecificFieldsContainer = document.getElementById('role-specific-fields');
+            let currentPosition = '';
+
+            function showModal(position) {
+                currentPosition = position;
+                const lang = document.documentElement.lang;
+                modalTitle.textContent = `${translations[lang].applyButton} for ${position}`;
+                roleSpecificFieldsContainer.innerHTML = ''; // Clear previous fields
+
+                // Add role-specific fields
+                if (position.includes('Developer') || position.includes('Engineer')) {
+                    roleSpecificFieldsContainer.innerHTML = `
+                        <div class="mb-4">
+                            <label for="modal-github" class="block text-brand-brown font-semibold mb-2" data-key="formGithub">${translations[lang].formGithub}</label>
+                            <input type="url" id="modal-github" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" placeholder="https://github.com/your-profile">
+                        </div>`;
+                } else if (position.includes('Field Operations Manager')) {
+                     roleSpecificFieldsContainer.innerHTML = `
+                        <div class="mb-4">
+                            <label for="modal-experience" class="block text-brand-brown font-semibold mb-2" data-key="formExperienceField">${translations[lang].formExperienceField}</label>
+                            <textarea id="modal-experience" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
+                        </div>`;
+                } else if (position.includes('Digital Marketing Specialist')) {
+                     roleSpecificFieldsContainer.innerHTML = `
+                        <div class="mb-4">
+                            <label for="modal-experience" class="block text-brand-brown font-semibold mb-2" data-key="formExperienceMarketing">${translations[lang].formExperienceMarketing}</label>
+                            <textarea id="modal-experience" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
+                        </div>`;
+                } else if (position.includes('Co-founder')) {
+                     roleSpecificFieldsContainer.innerHTML = `
+                        <div class="mb-4">
+                            <label for="modal-experience" class="block text-brand-brown font-semibold mb-2" data-key="formVisionCofounder">${translations[lang].formVisionCofounder}</label>
+                            <textarea id="modal-experience" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
+                        </div>`;
+                }
+
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.querySelector('.modal-content').classList.remove('scale-95');
+            }
+
+            function hideModal() {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modal.querySelector('.modal-content').classList.add('scale-95');
+                modalForm.reset();
+            }
+
+            document.querySelectorAll('.apply-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const position = this.getAttribute('data-position');
+                    showModal(position);
+                });
+            });
+
+            closeModalBtn.addEventListener('click', hideModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    hideModal();
+                }
+            });
+
+            modalForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('modal-name').value;
+                const phone = document.getElementById('modal-phone').value;
+                const email = document.getElementById('modal-email').value;
+                
+                let specificInfo = '';
+                const specificField = document.getElementById('modal-github') || document.getElementById('modal-experience');
+                if(specificField) {
+                    const label = specificField.previousElementSibling.textContent;
+                    specificInfo = `${label}:\n${specificField.value}\n\n`;
+                }
+
+                const subject = `Application for ${currentPosition} at Krishikaam`;
+                const body = `Hello,
+
+A new application has been submitted for the ${currentPosition} position.
+
+Applicant Details:
+- Name: ${name}
+- Phone: ${phone}
+- Email: ${email}
+
+${specificInfo}Please find the applicant's resume at the link they provide.
+
+Thank you.`;
+
+                const mailtoLink = `mailto:officialkrishikaam@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.location.href = mailtoLink;
+
+                setTimeout(() => {
+                     alert(document.documentElement.lang === 'hi' ? 'आपका आवेदन भेजने के लिए तैयार है! कृपया अपने ईमेल क्लाइंट में भेजें पर क्लिक करें।' : 'Your application is ready to be sent! Please click send in your email client.');
+                     hideModal();
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

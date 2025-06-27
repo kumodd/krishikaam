@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Support - Krishikaam</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Styles from main page */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FBF9F4; /* Light Beige */
+            color: #3A3A3A; /* Dark Brown/Gray */
+        }
+        .text-brand-green { color: #4A6A50; }
+        .bg-brand-green { background-color: #4A6A50; }
+        .hover\:bg-brand-green-dark:hover { background-color: #3B5440; }
+        .text-brand-brown { color: #6B4F4F; }
+        .bg-brand-beige { background-color: #FBF9F4; }
+        .border-brand-green { border-color: #4A6A50; }
+
+        /* Fade-in animation on scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Accordion styles */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-brand-beige/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo and Tagline -->
+            <a href="index.html" class="flex flex-col cursor-pointer">
+                <h1 class="text-3xl font-extrabold text-brand-green">Krishikaam</h1>
+                <p class="text-xs text-brand-brown hidden sm:block" data-key="tagline">Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture</p>
+            </a>
+            
+            <!-- Navigation & CTAs -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <div class="relative group">
+                     <button class="bg-brand-green text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 text-sm sm:text-base" data-key="joinButton">
+                        Join Krishikaam
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48 right-0">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinFarmer">Join as Farmer</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinOperator">Join as Drone Operator</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-gray-500 hover:text-brand-green">
+                        <i data-lucide="globe"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-32 right-0">
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="en">English</a>
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="hi">हिन्दी</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Contact Hero Section -->
+        <section class="py-16 md:py-24 bg-green-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-brand-green leading-tight mb-4" data-key="contactTitle">
+                    Contact & Support
+                </h2>
+                <p class="text-lg md:text-xl text-brand-brown max-w-3xl mx-auto" data-key="contactSubtitle">
+                    We're here to help. Reach out to us through any of the channels below, or find answers to common questions.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Details Section -->
+        <section class="py-16 md:py-24 bg-white fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <!-- Phone -->
+                    <div>
+                        <div class="bg-green-100 text-brand-green w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"><i data-lucide="phone" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="phoneTitle">Call Us</h3>
+                        <p class="text-brand-brown" data-key="phoneDesc">Our support team is available from 9 AM to 6 PM.</p>
+                        <a href="tel:+91-123-456-7890" class="text-brand-green font-semibold hover:underline">+91-123-456-7890</a>
+                    </div>
+                    <!-- Email -->
+                    <div>
+                        <div class="bg-green-100 text-brand-green w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"><i data-lucide="mail" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="emailTitle">Email Us</h3>
+                        <p class="text-brand-brown" data-key="emailDesc">Send us your questions and we'll get back to you soon.</p>
+                        <a href="mailto:support@krishikaam.com" class="text-brand-green font-semibold hover:underline">support@krishikaam.com</a>
+                    </div>
+                    <!-- Address -->
+                    <div>
+                        <div class="bg-green-100 text-brand-green w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"><i data-lucide="map-pin" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-xl text-brand-green mb-2" data-key="addressTitle">Our Office</h3>
+                        <p class="text-brand-brown" data-key="addressDesc">Krishikaam Tech Pvt. Ltd.<br>Kaji Dumra, Bihar, India</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 md:py-24 bg-brand-beige fade-in-section">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-green" data-key="faqTitle">Frequently Asked Questions</h2>
+                </div>
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-left font-semibold text-brand-green">
+                            <span data-key="q1">How do I book a drone spraying service?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 pt-0 text-brand-brown" data-key="a1">You can book a drone service directly through the Krishikaam app, available on the Play Store. Alternatively, you can contact your local Krishi Mitra agent or call our support number, and we will schedule it for you.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-left font-semibold text-brand-green">
+                            <span data-key="q2">What payment methods are accepted?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 pt-0 text-brand-brown" data-key="a2">We accept multiple payment methods for your convenience, including UPI (Google Pay, PhonePe, etc.), direct bank transfer, and cash payments to our certified Krishi Mitra agents.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-left font-semibold text-brand-green">
+                            <span data-key="q3">How can I become a Drone Operator or Krishi Mitra?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 pt-0 text-brand-brown" data-key="a3">We are always looking for passionate individuals to join our network. Please visit the "Join as Operator" or "Become a Krishi Mitra" sections on our website, or send us an email at partners@krishikaam.com with your details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact-form-section" class="py-16 md:py-24 bg-white fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-green" data-key="formTitle">Send Us a Message</h2>
+                    <p class="text-lg text-brand-brown mt-2" data-key="formSubtitle">Can't find your answer? Fill out the form below.</p>
+                    <p class="text-sm text-gray-500 mt-2" data-key="formNote">Note: Submitting this form will open your default email application.</p>
+                </div>
+                <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                    <form id="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-brand-brown font-semibold mb-2" data-key="formName">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-brand-brown font-semibold mb-2" data-key="formPhone">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-brand-brown font-semibold mb-2" data-key="formMessage">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-brand-green text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105" data-key="formSubmit">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-green text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-2">Krishikaam</h3>
+                    <p class="mb-4 max-w-md" data-key="footerTagline">Let’s grow India’s future together.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:opacity-75"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerCompany">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about_us.html" class="hover:underline" data-key="footerAbout">About Us</a></li>
+                        <li><a href="career.html" class="hover:underline" data-key="footerCareers">Careers</a></li>
+                        <li><a href="#" class="hover:underline" data-key="footerBlog">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerSupport">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="join_as_operator.html" class="hover:underline" data-key="footerJoinOperator">Join as Operator</a></li>
+                        <li><a href="krishi_mitra.html" class="hover:underline" data-key="footerJoinMitra">Become a Krishi Mitra</a></li>
+                        <li><a href="#" class="hover:underline" data-key="footerContact">Contact & Support</a></li>
+                        <li><a href="privacy_policy.html" class="hover:underline" data-key="footerPrivacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-green-400/50 pt-6 text-center text-sm">
+                <p data-key="footerRights">&copy; 2025 Krishikaam. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Translation Data
+        const translations = {
+            en: {
+                tagline: "Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture",
+                joinButton: "Join Krishikaam",
+                joinFarmer: "Join as Farmer",
+                joinOperator: "Join as Drone Operator",
+                contactTitle: "Contact & Support",
+                contactSubtitle: "We're here to help. Reach out to us through any of the channels below, or find answers to common questions.",
+                phoneTitle: "Call Us",
+                phoneDesc: "Our support team is available from 9 AM to 6 PM.",
+                emailTitle: "Email Us",
+                emailDesc: "Send us your questions and we'll get back to you soon.",
+                addressTitle: "Our Office",
+                addressDesc: "Krishikaam Tech Pvt. Ltd.<br>Kaji Dumra, Bihar, India",
+                faqTitle: "Frequently Asked Questions",
+                q1: "How do I book a drone spraying service?",
+                a1: "You can book a drone service directly through the Krishikaam app, available on the Play Store. Alternatively, you can contact your local Krishi Mitra agent or call our support number, and we will schedule it for you.",
+                q2: "What payment methods are accepted?",
+                a2: "We accept multiple payment methods for your convenience, including UPI (Google Pay, PhonePe, etc.), direct bank transfer, and cash payments to our certified Krishi Mitra agents.",
+                q3: "How can I become a Drone Operator or Krishi Mitra?",
+                a3: "We are always looking for passionate individuals to join our network. Please visit the 'Join as Operator' or 'Become a Krishi Mitra' sections on our website, or send us an email at partners@krishikaam.com with your details.",
+                formTitle: "Send Us a Message",
+                formSubtitle: "Can't find your answer? Fill out the form below.",
+                formNote: "Note: Submitting this form will open your default email application.",
+                formName: "Name",
+                formPhone: "Phone Number",
+                formMessage: "Message",
+                formSubmit: "Send Message",
+                footerTagline: "Let’s grow India’s future together.",
+                footerCompany: "Company",
+                footerAbout: "About Us",
+                footerCareers: "Careers",
+                footerBlog: "Blog",
+                footerSupport: "Support",
+                footerJoinOperator: "Join as Operator",
+                footerJoinMitra: "Become a Krishi Mitra",
+                footerContact: "Contact & Support",
+                footerPrivacy: "Privacy Policy",
+                footerRights: "&copy; 2024 Krishikaam. All Rights Reserved.",
+            },
+            hi: {
+                tagline: "10 करोड़ छोटे किसानों को स्मार्ट, लाभदायक और सुरक्षित कृषि के साथ सशक्त बनाना",
+                joinButton: "कृषिकाम से जुड़ें",
+                joinFarmer: "किसान के रूप में जुड़ें",
+                joinOperator: "ड्रोन ऑपरेटर के रूप में जुड़ें",
+                contactTitle: "संपर्क और सहायता",
+                contactSubtitle: "हम यहाँ मदद करने के लिए हैं। नीचे दिए गए किसी भी माध्यम से हमसे संपर्क करें, या सामान्य प्रश्नों के उत्तर खोजें।",
+                phoneTitle: "हमें कॉल करें",
+                phoneDesc: "हमारी सहायता टीम सुबह 9 बजे से शाम 6 बजे तक उपलब्ध है।",
+                emailTitle: "हमें ईमेल करें",
+                emailDesc: "हमें अपने प्रश्न भेजें और हम जल्द ही आपसे संपर्क करेंगे।",
+                addressTitle: "हमारा कार्यालय",
+                addressDesc: "कृषिकाम टेक प्रा. लिमिटेड<br>काजी डूमरा, बिहार, भारत",
+                faqTitle: "अक्सर पूछे जाने वाले प्रश्न",
+                q1: "मैं ड्रोन छिड़काव सेवा कैसे बुक करूं?",
+                a1: "आप सीधे कृषिकाम ऐप के माध्यम से ड्रोन सेवा बुक कर सकते हैं, जो प्ले स्टोर पर उपलब्ध है। वैकल्पिक रूप से, आप अपने स्थानीय कृषि मित्र एजेंट से संपर्क कर सकते हैं या हमारे सहायता नंबर पर कॉल कर सकते हैं, और हम आपके लिए इसे शेड्यूल कर देंगे।",
+                q2: "कौन सी भुगतान विधियाँ स्वीकार की जाती हैं?",
+                a2: "हम आपकी सुविधा के लिए कई भुगतान विधियों को स्वीकार करते हैं, जिनमें यूपीआई (गूगल पे, फोनपे, आदि), सीधे बैंक हस्तांतरण, और हमारे प्रमाणित कृषि मित्र एजेंटों को नकद भुगतान शामिल हैं।",
+                q3: "मैं ड्रोन ऑपरेटर या कृषि मित्र कैसे बन सकता हूं?",
+                a3: "हम हमेशा अपने नेटवर्क में शामिल होने के लिए उत्साही व्यक्तियों की तलाश में रहते हैं। कृपया हमारी वेबसाइट पर 'ऑपरेटर के रूप में शामिल हों' या 'कृषि मित्र बनें' अनुभागों पर जाएं, या हमें अपने विवरण के साथ partners@krishikaam.com पर एक ईमेल भेजें।",
+                formTitle: "हमें एक संदेश भेजें",
+                formSubtitle: "अपना जवाब नहीं मिला? नीचे दिया गया फ़ॉर्म भरें।",
+                formNote: "नोट: यह फ़ॉर्म सबमिट करने पर आपका डिफ़ॉल्ट ईमेल एप्लिकेशन खुल जाएगा।",
+                formName: "नाम",
+                formPhone: "फ़ोन नंबर",
+                formMessage: "संदेश",
+                formSubmit: "संदेश भेजें",
+                footerTagline: "आइए मिलकर भारत का भविष्य उगाएं।",
+                footerCompany: "कंपनी",
+                footerAbout: "हमारे बारे में",
+                footerCareers: "करियर",
+                footerBlog: "ब्लॉग",
+                footerSupport: "सहायता",
+                footerJoinOperator: "ऑपरेटर के रूप में जुड़ें",
+                footerJoinMitra: "कृषि मित्र बनें",
+                footerContact: "संपर्क और सहायता",
+                footerPrivacy: "गोपनीयता नीति",
+                footerRights: "&copy; 2024 कृषिकाम। सर्वाधिकार सुरक्षित।",
+            }
+        };
+
+        // Function to switch language
+        function switchLanguage(lang) {
+            if (!translations[lang]) return;
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.dataset.key;
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- Lucide Icons Activation ---
+            lucide.createIcons();
+
+            // --- Fade-in Animations ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => observer.observe(section));
+
+            // --- Language Switcher Logic ---
+            const langSwitchers = document.querySelectorAll('.lang-switcher');
+            langSwitchers.forEach(switcher => {
+                switcher.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = e.target.dataset.lang;
+                    switchLanguage(lang);
+                });
+            });
+
+            // --- Accordion Logic ---
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('i');
+                    
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // Set default language on load
+            switchLanguage('en');
+            
+            // --- Contact Form Submission ---
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const message = document.getElementById('message').value;
+                
+                const subject = "New Contact from Krishikaam Website";
+                
+                const body = `Hello,
+
+You have a new contact form submission:
+
+Name: ${name}
+Phone: ${phone}
+Message:
+${message}
+
+---
+This email was generated from the Krishikaam contact form.`;
+
+                const mailtoLink = `mailto:officialkrishikaam@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                
+                window.location.href = mailtoLink;
+                
+                setTimeout(() => {
+                     alert(document.documentElement.lang === 'hi' ? 'आपका ईमेल भेजने के लिए तैयार है! कृपया अपने ईमेल क्लाइंट में भेजें पर क्लिक करें।' : 'Your email is ready to be sent! Please click send in your email client.');
+                     e.target.reset();
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
