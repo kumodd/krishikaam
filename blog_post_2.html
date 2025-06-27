@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bypass the Middleman: A Deep Dive into the Krishi Mandi - Krishikaam Blog</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Styles from main page */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FBF9F4; /* Light Beige */
+            color: #3A3A3A; /* Dark Brown/Gray */
+        }
+        .text-brand-green { color: #4A6A50; }
+        .bg-brand-green { background-color: #4A6A50; }
+        .hover\:bg-brand-green-dark:hover { background-color: #3B5440; }
+        .text-brand-brown { color: #6B4F4F; }
+        .bg-brand-beige { background-color: #FBF9F4; }
+        .border-brand-green { border-color: #4A6A50; }
+
+        /* Styles for article content */
+        .article-content h3 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
+            color: #4A6A50; /* text-brand-green */
+            margin-top: 2rem; /* mt-8 */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        .article-content p {
+            margin-bottom: 1.5rem; /* mb-6 */
+            line-height: 1.75; /* leading-relaxed */
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem; /* ml-6 */
+            margin-bottom: 1.5rem; /* mb-6 */
+            line-height: 1.75;
+        }
+        .article-content blockquote {
+            border-left: 4px solid #4A6A50;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #6B4F4F;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-brand-beige/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo and Tagline -->
+            <a href="index.html" class="flex flex-col cursor-pointer">
+                <h1 class="text-3xl font-extrabold text-brand-green">Krishikaam</h1>
+                <p class="text-xs text-brand-brown hidden sm:block" data-key="tagline">Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture</p>
+            </a>
+            
+            <!-- Navigation & CTAs -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <div class="relative group">
+                     <button class="bg-brand-green text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 text-sm sm:text-base" data-key="joinButton">
+                        Join Krishikaam
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48 right-0">
+                        <a href="join_as_farmer.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinFarmer">Join as Farmer</a>
+                        <a href="join_as_operator.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinOperator">Join as Drone Operator</a>
+                        <a href="krishi_mitra.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinMitra">Become a Krishi Mitra</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-gray-500 hover:text-brand-green">
+                        <i data-lucide="globe"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-32 right-0">
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="en">English</a>
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="hi">हिन्दी</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Article Section -->
+        <article class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <!-- Article Header -->
+                <div class="text-center mb-12">
+                    <a href="blog.html" class="text-brand-green font-semibold hover:underline" data-key="backToBlog">&larr; Back to Blog</a>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-brand-green leading-tight mt-4 mb-4" data-key="title">Bypass the Middleman: A Deep Dive into the Krishi Mandi</h1>
+                    <div class="text-sm text-gray-500">
+                        <span data-key="author">By Krishikaam Team</span> | <span data-key="date">June 27, 2025</span>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <img src="https://cdn.pixabay.com/photo/2016/07/31/09/25/market-1558658_1280.jpg" 
+                     alt="A bustling market with fresh produce" 
+                     class="rounded-lg shadow-xl w-full h-auto object-cover mb-12"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x400/a3e635/4d7c0f?text=Krishi+Mandi';">
+
+                <!-- Article Content -->
+                <div class="article-content text-lg text-brand-brown" data-key="content">
+                    <p>Every farmer knows the feeling: after months of hard work, nurturing crops from seed to harvest, the final price received at the local mandi often feels disappointing. The traditional supply chain is filled with middlemen, each taking a cut, which significantly reduces the farmer's hard-earned income. This system lacks transparency and leaves farmers with little power to negotiate.</p>
+                    
+                    <p>At Krishikaam, we asked a simple question: What if we could connect farmers directly to buyers? This question led to the creation of the Krishi Mandi, a digital marketplace built into our platform.</p>
+
+                    <h3>How the Krishi Mandi Empowers You</h3>
+                    
+                    <p>The Krishi Mandi is more than just a feature; it's a tool for financial empowerment. It digitizes the entire selling process, putting control back into the hands of the farmer. Here’s a closer look at how it works and why it’s a better alternative:</p>
+                    
+                    <ul>
+                        <li><strong>Direct Market Access:</strong> We have built a network of verified bulk buyers, including food processors, exporters, and large retailers. When you list your produce on the Krishi Mandi, you are showcasing it to a wide range of serious buyers, not just the limited options at your local physical mandi.</li>
+                        <li><strong>Transparent Pricing:</strong> With our AI-powered Price Predictor, you get real-time insights into market rates for your crops in different regions. This knowledge allows you to set a fair and competitive price for your produce, so you never have to guess its value.</li>
+                        <li><strong>Simple Listing Process:</strong> Using the Krishikaam app or with the help of a Krishi Mitra agent, you can easily list your available crops. Just enter the crop type, quantity, quality, and your expected price. It's as simple as sending a WhatsApp message.</li>
+                        <li><strong>Secure and Instant Payments:</strong> This is where we truly change the game. Once a buyer confirms the purchase and the produce is picked up, the payment is transferred directly to your bank account via UPI. No more waiting for weeks or months for your money. It’s fast, secure, and completely transparent.</li>
+                    </ul>
+
+                    <h3>A Real-World Example</h3>
+                    <blockquote>
+                        "Before Krishikaam, I used to sell my tomatoes at the local mandi for whatever price the agent offered. Last season, I listed my harvest on the Krishi Mandi. A food processing company from a nearby city bought my entire stock at a 20% higher price than I expected. The money was in my account the same day. It has completely changed how I see my farm's potential." - Ramesh Kumar, Farmer from Punjab.
+                    </blockquote>
+
+                    <h3>Take Control of Your Earnings</h3>
+
+                    <p>The Krishi Mandi is our commitment to ensuring that your hard work translates into fair rewards. By removing unnecessary layers and leveraging technology, we are creating a more equitable and profitable ecosystem for Indian farmers. It’s time to move beyond the limitations of the old system and take control of your financial future.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-green text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-2">Krishikaam</h3>
+                    <p class="mb-4 max-w-md" data-key="footerTagline">Let’s grow India’s future together.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:opacity-75"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerCompany">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about_us.html" class="hover:underline" data-key="footerAbout">About Us</a></li>
+                        <li><a href="career.html" class="hover:underline" data-key="footerCareers">Careers</a></li>
+                        <li><a href="blog.html" class="hover:underline" data-key="footerBlog">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerSupport">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="join_as_operator.html" class="hover:underline" data-key="footerJoinOperator">Join as Operator</a></li>
+                        <li><a href="krishi_mitra.html" class="hover:underline" data-key="footerJoinMitra">Become a Krishi Mitra</a></li>
+                        <li><a href="contact_and_support.html" class="hover:underline" data-key="footerContact">Contact & Support</a></li>
+                        <li><a href="privacy_policy.html" class="hover:underline" data-key="footerPrivacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-green-400/50 pt-6 text-center text-sm">
+                <p data-key="footerRights">&copy; 2025 Krishikaam. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Translation Data
+        const translations = {
+            en: {
+                tagline: "Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture",
+                joinButton: "Join Krishikaam",
+                joinFarmer: "Join as Farmer",
+                joinOperator: "Join as Drone Operator",
+                joinMitra: "Become a Krishi Mitra",
+                backToBlog: "← Back to Blog",
+                title: "Bypass the Middleman: A Deep Dive into the Krishi Mandi",
+                author: "By Krishikaam Team",
+                date: "June 27, 2025",
+                content: `<p>Every farmer knows the feeling: after months of hard work, nurturing crops from seed to harvest, the final price received at the local mandi often feels disappointing. The traditional supply chain is filled with middlemen, each taking a cut, which significantly reduces the farmer's hard-earned income. This system lacks transparency and leaves farmers with little power to negotiate.</p><p>At Krishikaam, we asked a simple question: What if we could connect farmers directly to buyers? This question led to the creation of the Krishi Mandi, a digital marketplace built into our platform.</p><h3>How the Krishi Mandi Empowers You</h3><p>The Krishi Mandi is more than just a feature; it's a tool for financial empowerment. It digitizes the entire selling process, putting control back into the hands of the farmer. Here’s a closer look at how it works and why it’s a better alternative:</p><ul><li><strong>Direct Market Access:</strong> We have built a network of verified bulk buyers, including food processors, exporters, and large retailers. When you list your produce on the Krishi Mandi, you are showcasing it to a wide range of serious buyers, not just the limited options at your local physical mandi.</li><li><strong>Transparent Pricing:</strong> With our AI-powered Price Predictor, you get real-time insights into market rates for your crops in different regions. This knowledge allows you to set a fair and competitive price for your produce, so you never have to guess its value.</li><li><strong>Simple Listing Process:</strong> Using the Krishikaam app or with the help of a Krishi Mitra agent, you can easily list your available crops. Just enter the crop type, quantity, quality, and your expected price. It's as simple as sending a WhatsApp message.</li><li><strong>Secure and Instant Payments:</strong> This is where we truly change the game. Once a buyer confirms the purchase and the produce is picked up, the payment is transferred directly to your bank account via UPI. No more waiting for weeks or months for your money. It’s fast, secure, and completely transparent.</li></ul><h3>A Real-World Example</h3><blockquote>"Before Krishikaam, I used to sell my tomatoes at the local mandi for whatever price the agent offered. Last season, I listed my harvest on the Krishi Mandi. A food processing company from a nearby city bought my entire stock at a 20% higher price than I expected. The money was in my account the same day. It has completely changed how I see my farm's potential." - Ramesh Kumar, Farmer from Punjab.</blockquote><h3>Take Control of Your Earnings</h3><p>The Krishi Mandi is our commitment to ensuring that your hard work translates into fair rewards. By removing unnecessary layers and leveraging technology, we are creating a more equitable and profitable ecosystem for Indian farmers. It’s time to move beyond the limitations of the old system and take control of your financial future.</p>`,
+                footerTagline: "Let’s grow India’s future together.",
+                footerCompany: "Company",
+                footerAbout: "About Us",
+                footerCareers: "Careers",
+                footerBlog: "Blog",
+                footerSupport: "Support",
+                footerJoinOperator: "Join as Operator",
+                footerJoinMitra: "Become a Krishi Mitra",
+                footerContact: "Contact & Support",
+                footerPrivacy: "Privacy Policy",
+                footerRights: "&copy; 2025 Krishikaam. All Rights Reserved.",
+            },
+            hi: {
+                tagline: "10 करोड़ छोटे किसानों को स्मार्ट, लाभदायक और सुरक्षित कृषि के साथ सशक्त बनाना",
+                joinButton: "कृषिकाम से जुड़ें",
+                joinFarmer: "किसान के रूप में जुड़ें",
+                joinOperator: "ड्रोन ऑपरेटर के रूप में जुड़ें",
+                joinMitra: "कृषि मित्र बनें",
+                backToBlog: "← ब्लॉग पर वापस जाएं",
+                title: "बिचौलिए को बायपास करें: कृषि मंडी में एक गहरा गोता",
+                author: "कृषिकाम टीम द्वारा",
+                date: "27 जून, 2025",
+                content: `<p>हर किसान इस भावना को जानता है: महीनों की कड़ी मेहनत के बाद, बीज से फसल तक फसलों का पोषण करने के बाद, स्थानीय मंडी में प्राप्त अंतिम मूल्य अक्सर निराशाजनक लगता है। पारंपरिक आपूर्ति श्रृंखला बिचौलियों से भरी है, प्रत्येक एक हिस्सा लेता है, जो किसान की मेहनत की कमाई को काफी कम कर देता है। इस प्रणाली में पारदर्शिता का अभाव है और किसानों को बातचीत करने की बहुत कम शक्ति मिलती है।</p><p>कृषिकाम में, हमने एक सरल प्रश्न पूछा: क्या होगा यदि हम किसानों को सीधे खरीदारों से जोड़ सकें? इस प्रश्न ने कृषि मंडी के निर्माण का नेतृत्व किया, जो हमारे मंच में बनाया गया एक डिजिटल बाज़ार है।</p><h3>कृषि मंडी आपको कैसे सशक्त बनाती है</h3><p>कृषि मंडी एक सुविधा से कहीं अधिक है; यह वित्तीय सशक्तिकरण का एक उपकरण है। यह पूरी बिक्री प्रक्रिया को डिजिटल बनाता है, नियंत्रण किसान के हाथों में वापस रखता है। यहाँ एक करीब से नज़र है कि यह कैसे काम करता है और यह एक बेहतर विकल्प क्यों है:</p><ul><li><strong>प्रत्यक्ष बाजार पहुंच:</strong> हमने खाद्य प्रोसेसर, निर्यातक और बड़े खुदरा विक्रेताओं सहित सत्यापित थोक खरीदारों का एक नेटवर्क बनाया है। जब आप कृषि मंडी पर अपनी उपज सूचीबद्ध करते हैं, तो आप इसे गंभीर खरीदारों की एक विस्तृत श्रृंखला के लिए प्रदर्शित कर रहे हैं, न कि केवल अपनी स्थानीय भौतिक मंडी में सीमित विकल्पों के लिए।</li><li><strong>पारदर्शी मूल्य निर्धारण:</strong> हमारे एआई-संचालित मूल्य भविष्यवक्ता के साथ, आपको विभिन्न क्षेत्रों में अपनी फसलों के लिए बाजार दरों में वास्तविक समय की जानकारी मिलती है। यह ज्ञान आपको अपनी उपज के लिए एक उचित और प्रतिस्पर्धी मूल्य निर्धारित करने की अनुमति देता है, इसलिए आपको कभी भी इसके मूल्य का अनुमान नहीं लगाना पड़ता है।</li><li><strong>सरल लिस्टिंग प्रक्रिया:</strong> कृषिकाम ऐप का उपयोग करके या कृषि मित्र एजेंट की मदद से, आप आसानी से अपनी उपलब्ध फसलों को सूचीबद्ध कर सकते हैं। बस फसल का प्रकार, मात्रा, गुणवत्ता और अपनी अपेक्षित कीमत दर्ज करें। यह व्हाट्सएप संदेश भेजने जितना आसान है।</li><li><strong>सुरक्षित और तत्काल भुगतान:</strong> यहीं पर हम वास्तव में खेल बदलते हैं। एक बार जब कोई खरीदार खरीद की पुष्टि करता है और उपज उठा ली जाती है, तो भुगतान सीधे आपके बैंक खाते में यूपीआई के माध्यम से स्थानांतरित कर दिया जाता है। अपने पैसे के लिए हफ्तों या महीनों तक इंतजार करने की कोई जरूरत नहीं है। यह तेज़, सुरक्षित और पूरी तरह से पारदर्शी है।</li></ul><h3>एक वास्तविक दुनिया का उदाहरण</h3><blockquote>"कृषिकाम से पहले, मैं अपने टमाटर स्थानीय मंडी में उस कीमत पर बेचता था जो एजेंट पेश करता था। पिछले सीजन में, मैंने अपनी फसल को कृषि मंडी पर सूचीबद्ध किया। पास के एक शहर की एक खाद्य प्रसंस्करण कंपनी ने मेरे पूरे स्टॉक को मेरी अपेक्षा से 20% अधिक कीमत पर खरीदा। पैसा उसी दिन मेरे खाते में था। इसने मेरे खेत की क्षमता को देखने के मेरे तरीके को पूरी तरह से बदल दिया है।" - रमेश कुमार, पंजाब के किसान।</blockquote><h3>अपनी कमाई पर नियंत्रण रखें</h3><p>कृषि मंडी यह सुनिश्चित करने के लिए हमारी प्रतिबद्धता है कि आपकी कड़ी मेहनत उचित पुरस्कारों में तब्दील हो। अनावश्यक परतों को हटाकर और प्रौद्योगिकी का लाभ उठाकर, हम भारतीय किसानों के लिए एक अधिक न्यायसंगत और लाभदायक पारिस्थितिकी तंत्र बना रहे हैं। यह पुरानी व्यवस्था की सीमाओं से आगे बढ़ने और अपने वित्तीय भविष्य पर नियंत्रण रखने का समय है।</p>`,
+                footerTagline: "आइए मिलकर भारत का भविष्य उगाएं।",
+                footerCompany: "कंपनी",
+                footerAbout: "हमारे बारे में",
+                footerCareers: "करियर",
+                footerBlog: "ब्लॉग",
+                footerSupport: "सहायता",
+                footerJoinOperator: "ऑपरेटर के रूप में जुड़ें",
+                footerJoinMitra: "कृषि मित्र बनें",
+                footerContact: "संपर्क और सहायता",
+                footerPrivacy: "गोपनीयता नीति",
+                footerRights: "&copy; 2025 कृषिकाम। सर्वाधिकार सुरक्षित।",
+            }
+        };
+
+        // Function to switch language
+        function switchLanguage(lang) {
+            if (!translations[lang]) return;
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.dataset.key;
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- Lucide Icons Activation ---
+            lucide.createIcons();
+
+            // --- Language Switcher Logic ---
+            const langSwitchers = document.querySelectorAll('.lang-switcher');
+            langSwitchers.forEach(switcher => {
+                switcher.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = e.target.dataset.lang;
+                    switchLanguage(lang);
+                });
+            });
+
+            // Set default language on load
+            switchLanguage('en');
+        });
+    </script>
+</body>
+</html>

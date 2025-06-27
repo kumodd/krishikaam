@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Than a Service: Building a Community - Krishikaam Blog</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Styles from main page */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FBF9F4; /* Light Beige */
+            color: #3A3A3A; /* Dark Brown/Gray */
+        }
+        .text-brand-green { color: #4A6A50; }
+        .bg-brand-green { background-color: #4A6A50; }
+        .hover\:bg-brand-green-dark:hover { background-color: #3B5440; }
+        .text-brand-brown { color: #6B4F4F; }
+        .bg-brand-beige { background-color: #FBF9F4; }
+        .border-brand-green { border-color: #4A6A50; }
+
+        /* Styles for article content */
+        .article-content h3 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
+            color: #4A6A50; /* text-brand-green */
+            margin-top: 2rem; /* mt-8 */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        .article-content p {
+            margin-bottom: 1.5rem; /* mb-6 */
+            line-height: 1.75; /* leading-relaxed */
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem; /* ml-6 */
+            margin-bottom: 1.5rem; /* mb-6 */
+            line-height: 1.75;
+        }
+        .article-content blockquote {
+            border-left: 4px solid #4A6A50;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #6B4F4F;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-brand-beige/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo and Tagline -->
+            <a href="index.html" class="flex flex-col cursor-pointer">
+                <h1 class="text-3xl font-extrabold text-brand-green">Krishikaam</h1>
+                <p class="text-xs text-brand-brown hidden sm:block" data-key="tagline">Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture</p>
+            </a>
+            
+            <!-- Navigation & CTAs -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <div class="relative group">
+                     <button class="bg-brand-green text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 text-sm sm:text-base" data-key="joinButton">
+                        Join Krishikaam
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48 right-0">
+                        <a href="join_as_farmer.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinFarmer">Join as Farmer</a>
+                        <a href="join_as_operator.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinOperator">Join as Drone Operator</a>
+                        <a href="krishi_mitra.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinMitra">Become a Krishi Mitra</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-gray-500 hover:text-brand-green">
+                        <i data-lucide="globe"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-32 right-0">
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="en">English</a>
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="hi">हिन्दी</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Article Section -->
+        <article class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <!-- Article Header -->
+                <div class="text-center mb-12">
+                    <a href="blog.html" class="text-brand-green font-semibold hover:underline" data-key="backToBlog">&larr; Back to Blog</a>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-brand-green leading-tight mt-4 mb-4" data-key="title">More Than a Service: Building a Community</h1>
+                    <div class="text-sm text-gray-500">
+                        <span data-key="author">By Krishikaam Team</span> | <span data-key="date">July 5, 2025</span>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2669&auto=format&fit=crop" 
+                     alt="A diverse group of people working together in a community" 
+                     class="rounded-lg shadow-xl w-full h-auto object-cover mb-12"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x400/a3e635/4d7c0f?text=Community';">
+
+                <!-- Article Content -->
+                <div class="article-content text-lg text-brand-brown" data-key="content">
+                    <p>When we started Krishikaam, our goal was to provide services that solve real problems for farmers. But as we've grown, we've realized we are building something much more valuable than just a collection of tools. We are building a community—a network of farmers, drone operators, and Krishi Mitra agents who are all connected and working towards a common goal.</p>
+                    
+                    <h3>The Three Pillars of Our Community</h3>
+                    
+                    <p>Our ecosystem is built on the collaboration between three key groups, each playing a vital role:</p>
+                    
+                    <ul>
+                        <li><strong>The Farmers:</strong> The heart of our community. By adopting new technologies and sharing their feedback, they drive our innovation and inspire us to build better solutions. Their success is our success.</li>
+                        <li><strong>The Drone Operators:</strong> These skilled pilots are the pioneers bringing modern technology to the fields. They provide the critical service of safe and efficient spraying, forming a crucial link in the agricultural value chain.</li>
+                        <li><strong>The Krishi Mitra Agents:</strong> The connectors and the local champions. They bridge the gap between technology and tradition, ensuring that every farmer can access our services and building the on-ground trust that makes our network strong.</li>
+                    </ul>
+
+                    <h3>How the Community Creates Value for Everyone</h3>
+                    
+                    <p>When these three groups work together on the Krishikaam platform, a powerful cycle of growth begins:</p>
+                    
+                    <p>A farmer, guided by a Krishi Mitra, books a drone service. This creates a job for a local drone operator. The efficient spraying leads to a better harvest for the farmer. The farmer then sells this larger harvest on the Krishi Mandi for a better price. The farmer's increased profit allows them to invest more in their farm, perhaps by using the drone service again or trying a new crop suggested by the AI Advisor. This, in turn, creates more opportunities for the drone operator and the Krishi Mitra. </p>
+
+                    <blockquote>
+                        "It feels like we are all part of one big team. I know the drone pilot who sprays my field, and I trust my Krishi Mitra. We are all helping each other grow. Krishikaam is not just an app; it's our partner." - A Farmer in our network.
+                    </blockquote>
+
+                    <h3>Join the Movement</h3>
+
+                    <p>This interconnected network is what makes Krishikaam truly unique. We are proving that when you empower individuals and connect them through a common platform, you can create a self-sustaining ecosystem of growth and prosperity. Whether you are a farmer looking to improve your yield, a drone pilot seeking steady work, or an entrepreneur wanting to lead change in your village, there is a place for you in the Krishikaam community. Together, we are not just changing farming; we are building a stronger, more prosperous rural India.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-green text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-2">Krishikaam</h3>
+                    <p class="mb-4 max-w-md" data-key="footerTagline">Let’s grow India’s future together.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:opacity-75"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerCompany">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about_us.html" class="hover:underline" data-key="footerAbout">About Us</a></li>
+                        <li><a href="career.html" class="hover:underline" data-key="footerCareers">Careers</a></li>
+                        <li><a href="blog.html" class="hover:underline" data-key="footerBlog">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerSupport">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="join_as_operator.html" class="hover:underline" data-key="footerJoinOperator">Join as Operator</a></li>
+                        <li><a href="krishi_mitra.html" class="hover:underline" data-key="footerJoinMitra">Become a Krishi Mitra</a></li>
+                        <li><a href="contact_and_support.html" class="hover:underline" data-key="footerContact">Contact & Support</a></li>
+                        <li><a href="privacy_policy.html" class="hover:underline" data-key="footerPrivacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-green-400/50 pt-6 text-center text-sm">
+                <p data-key="footerRights">&copy; 2025 Krishikaam. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Translation Data
+        const translations = {
+            en: {
+                tagline: "Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture",
+                joinButton: "Join Krishikaam",
+                joinFarmer: "Join as Farmer",
+                joinOperator: "Join as Drone Operator",
+                joinMitra: "Become a Krishi Mitra",
+                backToBlog: "← Back to Blog",
+                title: "More Than a Service: Building a Community",
+                author: "By Krishikaam Team",
+                date: "July 5, 2025",
+                content: `<p>When we started Krishikaam, our goal was to provide services that solve real problems for farmers. But as we've grown, we've realized we are building something much more valuable than just a collection of tools. We are building a community—a network of farmers, drone operators, and Krishi Mitra agents who are all connected and working towards a common goal.</p><h3>The Three Pillars of Our Community</h3><p>Our ecosystem is built on the collaboration between three key groups, each playing a vital role:</p><ul><li><strong>The Farmers:</strong> The heart of our community. By adopting new technologies and sharing their feedback, they drive our innovation and inspire us to build better solutions. Their success is our success.</li><li><strong>The Drone Operators:</strong> These skilled pilots are the pioneers bringing modern technology to the fields. They provide the critical service of safe and efficient spraying, forming a crucial link in the agricultural value chain.</li><li><strong>The Krishi Mitra Agents:</strong> The connectors and the local champions. They bridge the gap between technology and tradition, ensuring that every farmer can access our services and building the on-ground trust that makes our network strong.</li></ul><h3>How the Community Creates Value for Everyone</h3><p>When these three groups work together on the Krishikaam platform, a powerful cycle of growth begins:</p><p>A farmer, guided by a Krishi Mitra, books a drone service. This creates a job for a local drone operator. The efficient spraying leads to a better harvest for the farmer. The farmer then sells this larger harvest on the Krishi Mandi for a better price. The farmer's increased profit allows them to invest more in their farm, perhaps by using the drone service again or trying a new crop suggested by the AI Advisor. This, in turn, creates more opportunities for the drone operator and the Krishi Mitra. </p><blockquote>"It feels like we are all part of one big team. I know the drone pilot who sprays my field, and I trust my Krishi Mitra. We are all helping each other grow. Krishikaam is not just an app; it's our partner." - A Farmer in our network.</blockquote><h3>Join the Movement</h3><p>This interconnected network is what makes Krishikaam truly unique. We are proving that when you empower individuals and connect them through a common platform, you can create a self-sustaining ecosystem of growth and prosperity. Whether you are a farmer looking to improve your yield, a drone pilot seeking steady work, or an entrepreneur wanting to lead change in your village, there is a place for you in the Krishikaam community. Together, we are not just changing farming; we are building a stronger, more prosperous rural India.</p>`,
+                footerTagline: "Let’s grow India’s future together.",
+                footerCompany: "Company",
+                footerAbout: "About Us",
+                footerCareers: "Careers",
+                footerBlog: "Blog",
+                footerSupport: "Support",
+                footerJoinOperator: "Join as Operator",
+                footerJoinMitra: "Become a Krishi Mitra",
+                footerContact: "Contact & Support",
+                footerPrivacy: "Privacy Policy",
+                footerRights: "&copy; 2025 Krishikaam. All Rights Reserved.",
+            },
+            hi: {
+                tagline: "10 करोड़ छोटे किसानों को स्मार्ट, लाभदायक और सुरक्षित कृषि के साथ सशक्त बनाना",
+                joinButton: "कृषिकाम से जुड़ें",
+                joinFarmer: "किसान के रूप में जुड़ें",
+                joinOperator: "ड्रोन ऑपरेटर के रूप में जुड़ें",
+                joinMitra: "कृषि मित्र बनें",
+                backToBlog: "← ब्लॉग पर वापस जाएं",
+                title: "एक सेवा से अधिक: एक समुदाय का निर्माण",
+                author: "कृषिकाम टीम द्वारा",
+                date: "5 जुलाई, 2025",
+                content: `<p>जब हमने कृषिकाम शुरू किया, तो हमारा लक्ष्य ऐसी सेवाएं प्रदान करना था जो किसानों के लिए वास्तविक समस्याओं का समाधान करें। लेकिन जैसे-जैसे हम बड़े हुए हैं, हमने महसूस किया है कि हम केवल उपकरणों के संग्रह से कहीं अधिक मूल्यवान कुछ बना रहे हैं। हम एक समुदाय का निर्माण कर रहे हैं - किसानों, ड्रोन ऑपरेटरों और कृषि मित्र एजेंटों का एक नेटवर्क जो सभी जुड़े हुए हैं और एक सामान्य लक्ष्य की ओर काम कर रहे हैं।</p><h3>हमारे समुदाय के तीन स्तंभ</h3><p>हमारा पारिस्थितिकी तंत्र तीन प्रमुख समूहों के बीच सहयोग पर बनाया गया है, जिनमें से प्रत्येक एक महत्वपूर्ण भूमिका निभा रहा है:</p><ul><li><strong>किसान:</strong> हमारे समुदाय का दिल। नई तकनीकों को अपनाकर और अपनी प्रतिक्रिया साझा करके, वे हमारे नवाचार को बढ़ावा देते हैं और हमें बेहतर समाधान बनाने के लिए प्रेरित करते हैं। उनकी सफलता हमारी सफलता है।</li><li><strong>ड्रोन ऑपरेटर्स:</strong> ये कुशल पायलट खेतों में आधुनिक तकनीक लाने वाले अग्रणी हैं। वे सुरक्षित और कुशल छिड़काव की महत्वपूर्ण सेवा प्रदान करते हैं, जो कृषि मूल्य श्रृंखला में एक महत्वपूर्ण कड़ी बनाते हैं।</li><li><strong>कृषि मित्र एजेंट:</strong> संयोजक और स्थानीय चैंपियन। वे प्रौद्योगिकी और परंपरा के बीच की खाई को पाटते हैं, यह सुनिश्चित करते हुए कि प्रत्येक किसान हमारी सेवाओं तक पहुंच सके और जमीनी विश्वास का निर्माण कर सके जो हमारे नेटवर्क को मजबूत बनाता है।</li></ul><h3>समुदाय सभी के लिए मूल्य कैसे बनाता है</h3><p>जब ये तीन समूह कृषिकाम मंच पर एक साथ काम करते हैं, तो विकास का एक शक्तिशाली चक्र शुरू होता है:</p><p>एक किसान, एक कृषि मित्र द्वारा निर्देशित, एक ड्रोन सेवा बुक करता है। यह एक स्थानीय ड्रोन ऑपरेटर के लिए एक नौकरी बनाता है। कुशल छिड़काव से किसान के लिए बेहतर फसल होती है। किसान तब इस बड़ी फसल को कृषि मंडी में बेहतर कीमत पर बेचता है। किसान के बढ़े हुए लाभ से उन्हें अपने खेत में अधिक निवेश करने की अनुमति मिलती है, शायद ड्रोन सेवा का फिर से उपयोग करके या एआई सलाहकार द्वारा सुझाए गए एक नए फसल की कोशिश करके। यह, बदले में, ड्रोन ऑपरेटर और कृषि मित्र के लिए अधिक अवसर पैदा करता है।</p><blockquote>"ऐसा लगता है जैसे हम सब एक बड़ी टीम का हिस्सा हैं। मैं उस ड्रोन पायलट को जानता हूं जो मेरे खेत में छिड़काव करता है, और मुझे अपने कृषि मित्र पर भरोसा है। हम सब एक दूसरे को बढ़ने में मदद कर रहे हैं। कृषिकाम सिर्फ एक ऐप नहीं है; यह हमारा साथी है।" - हमारे नेटवर्क में एक किसान।</blockquote><h3>आंदोलन में शामिल हों</h3><p>यह परस्पर जुड़ा नेटवर्क ही कृषिकाम को वास्तव में अद्वितीय बनाता है। हम यह साबित कर रहे हैं कि जब आप व्यक्तियों को सशक्त बनाते हैं और उन्हें एक सामान्य मंच के माध्यम से जोड़ते हैं, तो आप विकास और समृद्धि का एक आत्मनिर्भर पारिस्थितिकी तंत्र बना सकते हैं। चाहे आप अपनी उपज में सुधार करने वाले किसान हों, स्थिर काम की तलाश में ड्रोन पायलट हों, या अपने गांव में बदलाव का नेतृत्व करने के इच्छुक उद्यमी हों, कृषिकाम समुदाय में आपके लिए एक जगह है। साथ में, हम सिर्फ खेती नहीं बदल रहे हैं; हम एक मजबूत, अधिक समृद्ध ग्रामीण भारत का निर्माण कर रहे हैं।</p>`,
+                footerTagline: "आइए मिलकर भारत का भविष्य उगाएं।",
+                footerCompany: "कंपनी",
+                footerAbout: "हमारे बारे में",
+                footerCareers: "करियर",
+                footerBlog: "ब्लॉग",
+                footerSupport: "सहायता",
+                footerJoinOperator: "ऑपरेटर के रूप में जुड़ें",
+                footerJoinMitra: "कृषि मित्र बनें",
+                footerContact: "संपर्क और सहायता",
+                footerPrivacy: "गोपनीयता नीति",
+                footerRights: "&copy; 2025 Krishikaam। सर्वाधिकार सुरक्षित।",
+            }
+        };
+
+        // Function to switch language
+        function switchLanguage(lang) {
+            if (!translations[lang]) return;
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.dataset.key;
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- Lucide Icons Activation ---
+            lucide.createIcons();
+
+            // --- Language Switcher Logic ---
+            const langSwitchers = document.querySelectorAll('.lang-switcher');
+            langSwitchers.forEach(switcher => {
+                switcher.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = e.target.dataset.lang;
+                    switchLanguage(lang);
+                });
+            });
+
+            // Set default language on load
+            switchLanguage('en');
+        });
+    </script>
+</body>
+</html>

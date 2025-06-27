@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Farmer's Story: Ramesh Kumar's Success with Krishikaam - Krishikaam Blog</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Styles from main page */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FBF9F4; /* Light Beige */
+            color: #3A3A3A; /* Dark Brown/Gray */
+        }
+        .text-brand-green { color: #4A6A50; }
+        .bg-brand-green { background-color: #4A6A50; }
+        .hover\:bg-brand-green-dark:hover { background-color: #3B5440; }
+        .text-brand-brown { color: #6B4F4F; }
+        .bg-brand-beige { background-color: #FBF9F4; }
+        .border-brand-green { border-color: #4A6A50; }
+
+        /* Styles for article content */
+        .article-content h3 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
+            color: #4A6A50; /* text-brand-green */
+            margin-top: 2rem; /* mt-8 */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        .article-content p {
+            margin-bottom: 1.5rem; /* mb-6 */
+            line-height: 1.75; /* leading-relaxed */
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem; /* ml-6 */
+            margin-bottom: 1.5rem; /* mb-6 */
+            line-height: 1.75;
+        }
+        .article-content blockquote {
+            border-left: 4px solid #4A6A50;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #6B4F4F;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-brand-beige/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo and Tagline -->
+            <a href="index.html" class="flex flex-col cursor-pointer">
+                <h1 class="text-3xl font-extrabold text-brand-green">Krishikaam</h1>
+                <p class="text-xs text-brand-brown hidden sm:block" data-key="tagline">Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture</p>
+            </a>
+            
+            <!-- Navigation & CTAs -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <div class="relative group">
+                     <button class="bg-brand-green text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-brand-green-dark transition-all duration-300 transform hover:scale-105 text-sm sm:text-base" data-key="joinButton">
+                        Join Krishikaam
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48 right-0">
+                        <a href="join_as_farmer.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinFarmer">Join as Farmer</a>
+                        <a href="join_as_operator.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinOperator">Join as Drone Operator</a>
+                        <a href="krishi_mitra.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-key="joinMitra">Become a Krishi Mitra</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="text-gray-500 hover:text-brand-green">
+                        <i data-lucide="globe"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-32 right-0">
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="en">English</a>
+                        <a href="#" class="lang-switcher block px-4 py-2 text-gray-700 hover:bg-gray-100" data-lang="hi">हिन्दी</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Article Section -->
+        <article class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <!-- Article Header -->
+                <div class="text-center mb-12">
+                    <a href="blog.html" class="text-brand-green font-semibold hover:underline" data-key="backToBlog">&larr; Back to Blog</a>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-brand-green leading-tight mt-4 mb-4" data-key="title">A Farmer's Story: Ramesh Kumar's Success with Krishikaam</h1>
+                    <div class="text-sm text-gray-500">
+                        <span data-key="author">By Krishikaam Team</span> | <span data-key="date">July 4, 2025</span>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <img src="https://cdn.pixabay.com/photo/2020/02/25/11/29/potato-4878651_1280.jpg?q=80&w=2670&auto=format&fit=crop" 
+                     alt="A happy farmer, Ramesh Kumar, standing in his field" 
+                     class="rounded-lg shadow-xl w-full h-auto object-cover mb-12"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x400/a3e635/4d7c0f?text=Ramesh+Kumar';">
+
+                <!-- Article Content -->
+                <div class="article-content text-lg text-brand-brown" data-key="content">
+                    <p>Behind every service we build, there is a farmer we aim to empower. To understand the real-world impact of Krishikaam, we spoke with Ramesh Kumar, a tomato farmer from Punjab who has been using our platform for the past two seasons. His story is a testament to the power of integrating technology with agriculture.</p>
+                    
+                    <h3>The Old Way: A Story of Struggle</h3>
+                    
+                    <p>"Before Krishikaam, every season was a gamble," Ramesh tells us. "I would spend two weeks just spraying my fields with a heavy tank on my back. Sometimes I would get sick from the chemicals. At the end of the season, I had to take whatever price the agent at the mandi offered me. It was hard work for very little reward."</p>
+
+                    <h3>The Krishikaam Transformation</h3>
+                    
+                    <p>Ramesh was introduced to Krishikaam by a local Krishi Mitra agent. He was skeptical at first but decided to try the drone spraying service for his tomato crop.</p>
+                    
+                    <ul>
+                        <li><strong>Safety and Efficiency:</strong> "The drone finished spraying my entire field in one morning," he recalls. "I didn't have to touch any chemicals. That alone was a huge relief. I had more time and energy for other work."</li>
+                        <li><strong>A Healthier Crop:</strong> The uniform spray from the drone led to better pest control and a healthier crop. His yield increased by nearly 15% in the first season.</li>
+                        <li><strong>Getting the Right Price:</strong> The biggest change came at harvest time. Instead of going to the local mandi, Ramesh used the Krishi Mandi feature on the app. "I listed my 5 tons of tomatoes. Within a day, a food processing company from Ludhiana contacted me. They offered me a price that was 20% higher than what I got last year."</li>
+                        <li><strong>Instant and Secure Payment:</strong> "The best part was the payment," Ramesh says with a smile. "Their truck came to my farm, loaded the tomatoes, and as soon as they left, the money was in my bank account through UPI. No delays, no excuses."</li>
+                    </ul>
+
+                    <h3>A New Outlook</h3>
+                    <blockquote>
+                        "Krishikaam has given me control over my own business. I feel like a modern farmer now. I save time, I am safe from chemicals, and I earn more money. My son is now interested in farming because he sees that it can be a profitable and respectable profession with the help of technology."
+                    </blockquote>
+
+                    <p>Ramesh Kumar's story is one of many. It showcases how providing access to the right tools can fundamentally change a farmer's life. By connecting services like drone spraying and digital markets, we are not just solving individual problems; we are creating a holistic ecosystem for success. Ramesh's journey from a struggling farmer to a confident agri-entrepreneur is the very reason Krishikaam exists.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-green text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-2">Krishikaam</h3>
+                    <p class="mb-4 max-w-md" data-key="footerTagline">Let’s grow India’s future together.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:opacity-75"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="hover:opacity-75"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerCompany">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about_us.html" class="hover:underline" data-key="footerAbout">About Us</a></li>
+                        <li><a href="career.html" class="hover:underline" data-key="footerCareers">Careers</a></li>
+                        <li><a href="blog.html" class="hover:underline" data-key="footerBlog">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-key="footerSupport">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="join_as_operator.html" class="hover:underline" data-key="footerJoinOperator">Join as Operator</a></li>
+                        <li><a href="krishi_mitra.html" class="hover:underline" data-key="footerJoinMitra">Become a Krishi Mitra</a></li>
+                        <li><a href="contact_and_support.html" class="hover:underline" data-key="footerContact">Contact & Support</a></li>
+                        <li><a href="privacy_policy.html" class="hover:underline" data-key="footerPrivacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-green-400/50 pt-6 text-center text-sm">
+                <p data-key="footerRights">&copy; 2025 Krishikaam. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Translation Data
+        const translations = {
+            en: {
+                tagline: "Empowering 100 Million Small Farmers with Smart, Profitable & Safe Agriculture",
+                joinButton: "Join Krishikaam",
+                joinFarmer: "Join as Farmer",
+                joinOperator: "Join as Drone Operator",
+                joinMitra: "Become a Krishi Mitra",
+                backToBlog: "← Back to Blog",
+                title: "A Farmer's Story: Ramesh Kumar's Success with Krishikaam",
+                author: "By Krishikaam Team",
+                date: "July 4, 2025",
+                content: `<p>Behind every service we build, there is a farmer we aim to empower. To understand the real-world impact of Krishikaam, we spoke with Ramesh Kumar, a tomato farmer from Punjab who has been using our platform for the past two seasons. His story is a testament to the power of integrating technology with agriculture.</p><h3>The Old Way: A Story of Struggle</h3><p>"Before Krishikaam, every season was a gamble," Ramesh tells us. "I would spend two weeks just spraying my fields with a heavy tank on my back. Sometimes I would get sick from the chemicals. At the end of the season, I had to take whatever price the agent at the mandi offered me. It was hard work for very little reward."</p><h3>The Krishikaam Transformation</h3><p>Ramesh was introduced to Krishikaam by a local Krishi Mitra agent. He was skeptical at first but decided to try the drone spraying service for his tomato crop.</p><ul><li><strong>Safety and Efficiency:</strong> "The drone finished spraying my entire field in one morning," he recalls. "I didn't have to touch any chemicals. That alone was a huge relief. I had more time and energy for other work."</li><li><strong>A Healthier Crop:</strong> The uniform spray from the drone led to better pest control and a healthier crop. His yield increased by nearly 15% in the first season.</li><li><strong>Getting the Right Price:</strong> The biggest change came at harvest time. Instead of going to the local mandi, Ramesh used the Krishi Mandi feature on the app. "I listed my 5 tons of tomatoes. Within a day, a food processing company from Ludhiana contacted me. They offered me a price that was 20% higher than what I got last year."</li><li><strong>Instant and Secure Payment:</strong> "The best part was the payment," Ramesh says with a smile. "Their truck came to my farm, loaded the tomatoes, and as soon as they left, the money was in my bank account through UPI. No delays, no excuses."</li></ul><h3>A New Outlook</h3><blockquote>"Krishikaam has given me control over my own business. I feel like a modern farmer now. I save time, I am safe from chemicals, and I earn more money. My son is now interested in farming because he sees that it can be a profitable and respectable profession with the help of technology."</blockquote><p>Ramesh Kumar's story is one of many. It showcases how providing access to the right tools can fundamentally change a farmer's life. By connecting services like drone spraying and digital markets, we are not just solving individual problems; we are creating a holistic ecosystem for success. Ramesh's journey from a struggling farmer to a confident agri-entrepreneur is the very reason Krishikaam exists.</p>`,
+                footerTagline: "Let’s grow India’s future together.",
+                footerCompany: "Company",
+                footerAbout: "About Us",
+                footerCareers: "Careers",
+                footerBlog: "Blog",
+                footerSupport: "Support",
+                footerJoinOperator: "Join as Operator",
+                footerJoinMitra: "Become a Krishi Mitra",
+                footerContact: "Contact & Support",
+                footerPrivacy: "Privacy Policy",
+                footerRights: "&copy; 2025 Krishikaam. All Rights Reserved.",
+            },
+            hi: {
+                tagline: "10 करोड़ छोटे किसानों को स्मार्ट, लाभदायक और सुरक्षित कृषि के साथ सशक्त बनाना",
+                joinButton: "कृषिकाम से जुड़ें",
+                joinFarmer: "किसान के रूप में जुड़ें",
+                joinOperator: "ड्रोन ऑपरेटर के रूप में जुड़ें",
+                joinMitra: "कृषि मित्र बनें",
+                backToBlog: "← ब्लॉग पर वापस जाएं",
+                title: "एक किसान की कहानी: रमेश कुमार की कृषिकाम के साथ सफलता",
+                author: "कृषिकाम टीम द्वारा",
+                date: "4 जुलाई, 2025",
+                content: `<p>हमारे द्वारा बनाई गई हर सेवा के पीछे, एक किसान है जिसे हम सशक्त बनाना चाहते हैं। कृषिकाम के वास्तविक प्रभाव को समझने के लिए, हमने पंजाब के एक टमाटर किसान रमेश कुमार से बात की, जो पिछले दो सत्रों से हमारे मंच का उपयोग कर रहे हैं। उनकी कहानी कृषि के साथ प्रौद्योगिकी को एकीकृत करने की शक्ति का एक प्रमाण है।</p><h3>पुराना तरीका: एक संघर्ष की कहानी</h3><p>"कृषिकाम से पहले, हर मौसम एक जुआ था," रमेश हमें बताते हैं। "मैं अपनी पीठ पर एक भारी टैंक लेकर अपने खेतों में छिड़काव करने में दो सप्ताह बिताता था। कभी-कभी मैं रसायनों से बीमार हो जाता था। मौसम के अंत में, मुझे मंडी में एजेंट द्वारा दी गई कोई भी कीमत लेनी पड़ती थी। यह बहुत कम इनाम के लिए कड़ी मेहनत थी।"</p><h3>कृषिकाम परिवर्तन</h3><p>रमेश को एक स्थानीय कृषि मित्र एजेंट द्वारा कृषिकाम से परिचित कराया गया था। वह पहले तो संशय में थे लेकिन उन्होंने अपनी टमाटर की फसल के लिए ड्रोन छिड़काव सेवा को आजमाने का फैसला किया।</p><ul><li><strong>सुरक्षा और दक्षता:</strong> "ड्रोन ने एक सुबह में मेरे पूरे खेत का छिड़काव पूरा कर दिया," वह याद करते हैं। "मुझे किसी भी रसायन को छूना नहीं पड़ा। यह अकेले ही एक बड़ी राहत थी। मेरे पास अन्य कामों के लिए अधिक समय और ऊर्जा थी।"</li><li><strong>एक स्वस्थ फसल:</strong> ड्रोन से समान स्प्रे ने बेहतर कीट नियंत्रण और एक स्वस्थ फसल को जन्म दिया। उनकी उपज पहले सीजन में लगभग 15% बढ़ गई।</li><li><strong>सही कीमत प्राप्त करना:</strong> सबसे बड़ा बदलाव फसल के समय आया। स्थानीय मंडी जाने के बजाय, रमेश ने ऐप पर कृषि मंडी सुविधा का उपयोग किया। "मैंने अपने 5 टन टमाटर सूचीबद्ध किए। एक दिन के भीतर, लुधियाना की एक खाद्य प्रसंस्करण कंपनी ने मुझसे संपर्क किया। उन्होंने मुझे पिछले साल मिली कीमत से 20% अधिक कीमत की पेशकश की।"</li><li><strong>तत्काल और सुरक्षित भुगतान:</strong> "सबसे अच्छी बात भुगतान था," रमेश एक मुस्कान के साथ कहते हैं। "उनका ट्रक मेरे खेत में आया, टमाटर लादे, और जैसे ही वे गए, पैसा यूपीआई के माध्यम से मेरे बैंक खाते में था। कोई देरी नहीं, कोई बहाना नहीं।"</li></ul><h3>एक नया दृष्टिकोण</h3><blockquote>"कृषिकाम ने मुझे अपने व्यवसाय पर नियंत्रण दिया है। अब मुझे एक आधुनिक किसान की तरह महसूस होता है। मैं समय बचाता हूं, मैं रसायनों से सुरक्षित हूं, और मैं अधिक पैसा कमाता हूं। मेरा बेटा अब खेती में दिलचस्पी रखता है क्योंकि वह देखता है कि यह प्रौद्योगिकी की मदद से एक लाभदायक और सम्मानजनक पेशा हो सकता है।"</blockquote><p>रमेश कुमार की कहानी कई में से एक है। यह दर्शाता है कि सही उपकरणों तक पहुंच प्रदान करना एक किसान के जीवन को मौलिक रूप से कैसे बदल सकता है। ड्रोन छिड़काव और डिजिटल बाजारों जैसी सेवाओं को जोड़कर, हम केवल व्यक्तिगत समस्याओं का समाधान नहीं कर रहे हैं; हम सफलता के लिए एक समग्र पारिस्थितिकी तंत्र बना रहे हैं। एक संघर्षरत किसान से एक आत्मविश्वासी कृषि-उद्यमी तक रमेश की यात्रा ही कृषिकाम के अस्तित्व का कारण है।</p>`,
+                footerTagline: "आइए मिलकर भारत का भविष्य उगाएं।",
+                footerCompany: "कंपनी",
+                footerAbout: "हमारे बारे में",
+                footerCareers: "करियर",
+                footerBlog: "ब्लॉग",
+                footerSupport: "सहायता",
+                footerJoinOperator: "ऑपरेटर के रूप में जुड़ें",
+                footerJoinMitra: "कृषि मित्र बनें",
+                footerContact: "संपर्क और सहायता",
+                footerPrivacy: "गोपनीयता नीति",
+                footerRights: "&copy; 2025 Krishikaam। सर्वाधिकार सुरक्षित।",
+            }
+        };
+
+        // Function to switch language
+        function switchLanguage(lang) {
+            if (!translations[lang]) return;
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.dataset.key;
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- Lucide Icons Activation ---
+            lucide.createIcons();
+
+            // --- Language Switcher Logic ---
+            const langSwitchers = document.querySelectorAll('.lang-switcher');
+            langSwitchers.forEach(switcher => {
+                switcher.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = e.target.dataset.lang;
+                    switchLanguage(lang);
+                });
+            });
+
+            // Set default language on load
+            switchLanguage('en');
+        });
+    </script>
+</body>
+</html>
