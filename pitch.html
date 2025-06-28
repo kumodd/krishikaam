@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishikaam - Seed Funding Pitch Deck</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Styles for Pitch Deck */
+        html, body {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FBF9F4;
+            color: #3A3A3A;
+        }
+        .slide-container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+        .slide {
+            scroll-snap-align: start;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 4rem;
+            position: relative;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+        .nav-button {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: background-color 0.2s;
+        }
+        .nav-button:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .nav-button.hidden {
+            display: none;
+        }
+        #prev-slide { left: 1rem; }
+        #next-slide { right: 1rem; }
+
+        .text-brand-green { color: #4A6A50; }
+        .bg-brand-green { background-color: #4A6A50; }
+        .text-brand-brown { color: #6B4F4F; }
+        .border-brand-green { border-color: #4A6A50; }
+        
+        h1 { font-size: 3rem; font-weight: 800; line-height: 1.2; }
+        h2 { font-size: 2.25rem; font-weight: 800; line-height: 1.2; }
+        h3 { font-size: 1.5rem; font-weight: 700; }
+        
+        @media (max-width: 768px) {
+            .slide { padding: 2rem 1.5rem; }
+            h1 { font-size: 2.25rem; }
+            h2 { font-size: 1.75rem; }
+            .nav-button { width: 2.5rem; height: 2.5rem; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="slide-container">
+        <!-- Slide 1: Title -->
+        <section id="slide-1" class="slide bg-brand-green text-white text-center">
+            <h1 class="text-6xl md:text-8xl font-extrabold">Krishikaam</h1>
+            <p class="mt-4 text-xl md:text-2xl" data-key="tagline">Empowering India's 100 Million Small Farmers.</p>
+            <p class="mt-8 text-lg" data-key="pitchType">Pre-Seed Funding Pitch Deck</p>
+            <div class="slide-number">1 / 15</div>
+        </section>
+
+        <!-- Slide 2: The Problem -->
+        <section id="slide-2" class="slide text-center">
+            <h2 class="text-brand-green" data-key="problemTitle">The Heart of India's Economy is Struggling.</h2>
+            <p class="text-brand-brown mt-4 max-w-4xl mx-auto text-lg" data-key="problemDesc">100 million+ smallholder farmers face a cycle of low profitability due to fragmented services, lack of technology access, exploitation by middlemen, and significant safety risks.</p>
+            <div class="mt-12 grid md:grid-cols-3 gap-8 w-full max-w-5xl">
+                <div class="bg-red-50 p-6 rounded-lg shadow-sm">
+                    <i data-lucide="trending-down" class="w-12 h-12 mx-auto text-red-600"></i>
+                    <h3 class="mt-4 text-red-800" data-key="prob1Title">Low Profitability</h3>
+                    <p class="text-sm text-red-700 mt-2" data-key="prob1Desc">Up to 40% of income lost to middlemen and inefficient supply chains.</p>
+                </div>
+                <div class="bg-red-50 p-6 rounded-lg shadow-sm">
+                    <i data-lucide="wifi-off" class="w-12 h-12 mx-auto text-red-600"></i>
+                    <h3 class="mt-4 text-red-800" data-key="prob2Title">Technology Gap</h3>
+                    <p class="text-sm text-red-700 mt-2" data-key="prob2Desc">Lack of access to modern tools, data, and digital markets hinders growth.</p>
+                </div>
+                <div class="bg-red-50 p-6 rounded-lg shadow-sm">
+                    <i data-lucide="shield-off" class="w-12 h-12 mx-auto text-red-600"></i>
+                    <h3 class="mt-4 text-red-800" data-key="prob3Title">Health & Safety Risks</h3>
+                    <p class="text-sm text-red-700 mt-2" data-key="prob3Desc">Direct exposure to harmful chemicals during manual spraying leads to long-term health issues.</p>
+                </div>
+            </div>
+            <div class="slide-number">2 / 15</div>
+        </section>
+
+        <!-- Slide 3: The Solution -->
+        <section id="slide-3" class="slide text-center">
+            <h2 class="text-brand-green" data-key="solutionTitle">A "Phygital" Ecosystem for the Indian Farmer.</h2>
+            <p class="text-brand-brown mt-4 max-w-4xl mx-auto text-lg" data-key="solutionDesc">Krishikaam will be a one-stop platform that combines user-friendly technology (Digital) with a trusted on-ground network of local agents (Physical) to deliver end-to-end agricultural services.</p>
+            <div class="mt-12 w-full max-w-4xl">
+                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2670&auto=format&fit=crop" alt="A farmer using a phone with a Krishi Mitra agent" class="rounded-lg shadow-xl" onerror="this.onerror=null;this.src='https://placehold.co/800x400/a3e635/4d7c0f?text=Phygital+Solution';">
+            </div>
+            <div class="slide-number">3 / 15</div>
+        </section>
+
+        <!-- Slide 4: Our Services -->
+        <section id="slide-4" class="slide text-center">
+            <h2 class="text-brand-green" data-key="servicesTitle">One Platform, Complete Farming Solutions.</h2>
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-5xl">
+                <div class="bg-green-50 p-4 rounded-lg text-center shadow-sm">
+                    <i data-lucide="drone" class="w-10 h-10 mx-auto text-brand-green"></i>
+                    <h3 class="mt-2 text-brand-green text-lg" data-key="service1">Drone Spraying</h3>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg text-center shadow-sm">
+                    <i data-lucide="shopping-basket" class="w-10 h-10 mx-auto text-brand-green"></i>
+                    <h3 class="mt-2 text-brand-green text-lg" data-key="service2">Krishi Mandi</h3>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg text-center shadow-sm">
+                    <i data-lucide="brain-circuit" class="w-10 h-10 mx-auto text-brand-green"></i>
+                    <h3 class="mt-2 text-brand-green text-lg" data-key="service3">AI Advisor</h3>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg text-center shadow-sm">
+                    <i data-lucide="truck" class="w-10 h-10 mx-auto text-brand-green"></i>
+                    <h3 class="mt-2 text-brand-green text-lg" data-key="service4">Input Delivery</h3>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg text-center shadow-sm">
+                    <i data-lucide="droplets" class="w-10 h-10 mx-auto text-brand-green"></i>
+                    <h3 class="mt-2 text-brand-green text-lg" data-key="service5">Krishi Jal</h3>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg text-center shadow-sm">
+                    <i data-lucide="users" class="w-10 h-10 mx-auto text-brand-green"></i>
+                    <h3 class="mt-2 text-brand-green text-lg" data-key="service6">Krishi Mitra Network</h3>
+                </div>
+            </div>
+            <div class="slide-number">4 / 15</div>
+        </section>
+
+        <!-- Slide 5: Market Opportunity -->
+        <section id="slide-5" class="slide text-center">
+            <h2 class="text-brand-green" data-key="marketTitle">A Massive, Underserved Market.</h2>
+            <p class="text-brand-brown mt-4 max-w-4xl mx-auto text-lg" data-key="marketDesc">The Indian AgriTech market is projected to reach $24 billion by 2025, yet the smallholder farmer segment remains largely untapped by integrated digital solutions.</p>
+            <div class="mt-12 grid md:grid-cols-3 gap-8 w-full max-w-5xl">
+                <div class="border-2 border-brand-green p-6 rounded-lg">
+                    <h3 class="text-brand-green" data-key="tamTitle">TAM</h3>
+                    <p class="text-4xl font-bold mt-2">$24B</p>
+                    <p class="text-sm text-brand-brown mt-2" data-key="tamDesc">Total Indian AgriTech Market</p>
+                </div>
+                <div class="border-2 border-brand-green p-6 rounded-lg">
+                    <h3 class="text-brand-green" data-key="samTitle">SAM</h3>
+                    <p class="text-4xl font-bold mt-2">$10B</p>
+                    <p class="text-sm text-brand-brown mt-2" data-key="samDesc">Services for Smallholder Farmers</p>
+                </div>
+                <div class="border-2 border-brand-green p-6 rounded-lg bg-green-100">
+                    <h3 class="text-brand-green" data-key="somTitle">SOM</h3>
+                    <p class="text-4xl font-bold mt-2">$500M</p>
+                    <p class="text-sm text-brand-brown mt-2" data-key="somDesc">Initial Target Market (Bihar & Adjacent States) in 3 Years</p>
+                </div>
+            </div>
+            <div class="slide-number">5 / 15</div>
+        </section>
+        
+        <!-- Slide 6: Business Model -->
+        <section id="slide-6" class="slide text-center">
+            <h2 class="text-brand-green" data-key="modelTitle">A Diversified & Scalable Revenue Model.</h2>
+            <p class="text-brand-brown mt-4 max-w-4xl mx-auto text-lg" data-key="modelDesc">We will generate revenue through multiple streams, creating a robust financial model with strong unit economics.</p>
+            <div class="mt-12 grid md:grid-cols-3 gap-8 w-full max-w-5xl">
+                <div class="bg-green-50 p-6 rounded-lg shadow-sm">
+                    <i data-lucide="percent" class="w-12 h-12 mx-auto text-brand-green"></i>
+                    <h3 class="mt-4 text-brand-green" data-key="rev1Title">Service Commissions</h3>
+                    <p class="text-sm text-brand-brown mt-2" data-key="rev1Desc">A percentage fee on every service booked (e.g., Drone Spraying, Krishi Jal).</p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-lg shadow-sm">
+                    <i data-lucide="shopping-cart" class="w-12 h-12 mx-auto text-brand-green"></i>
+                    <h3 class="mt-4 text-brand-green" data-key="rev2Title">Marketplace Fees</h3>
+                    <p class="text-sm text-brand-brown mt-2" data-key="rev2Desc">A small transaction fee on produce sold through the Krishi Mandi.</p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-lg shadow-sm">
+                    <i data-lucide="package" class="w-12 h-12 mx-auto text-brand-green"></i>
+                    <h3 class="mt-4 text-brand-green" data-key="rev3Title">Input Sales Margin</h3>
+                    <p class="text-sm text-brand-brown mt-2" data-key="rev3Desc">A margin on the sale of certified seeds, fertilizers, and pesticides.</p>
+                </div>
+            </div>
+            <div class="slide-number">6 / 15</div>
+        </section>
+
+        <!-- Slide 7: Market Validation (was Traction) -->
+        <section id="slide-7" class="slide text-center">
+            <h2 class="text-brand-green" data-key="tractionTitle">Market Validation & Strong Demand.</h2>
+            <p class="text-brand-brown mt-4 max-w-4xl mx-auto text-lg" data-key="tractionDesc">During our ideation phase, we have conducted extensive on-ground research to validate the demand for our proposed services.</p>
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-6xl">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <p class="text-4xl font-extrabold text-brand-green">100+</p>
+                    <p class="mt-2 text-brand-brown" data-key="metric1">Farmer Interviews Conducted</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <p class="text-4xl font-extrabold text-brand-green">85%</p>
+                    <p class="mt-2 text-brand-brown" data-key="metric2">Interest in Drone Services</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <p class="text-4xl font-extrabold text-brand-green">50+</p>
+                    <p class="mt-2 text-brand-brown" data-key="metric3">Krishi Mitra Waitlist</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <p class="text-4xl font-extrabold text-brand-green">10+</p>
+                    <p class="mt-2 text-brand-brown" data-key="metric4">Drone Operator LOIs</p>
+                </div>
+            </div>
+            <div class="slide-number">7 / 15</div>
+        </section>
+
+        <!-- Slide 8: Our Moat -->
+        <section id="slide-8" class="slide text-center">
+            <h2 class="text-brand-green" data-key="moatTitle">Our Defensible Moat: The "Phygital" Network.</h2>
+            <p class="text-brand-brown mt-4 max-w-4xl mx-auto text-lg" data-key="moatDesc">Our competitive advantage will be the powerful synergy between our technology and our on-ground human network, creating a high barrier to entry.</p>
+            <div class="mt-12 grid md:grid-cols-2 gap-12 w-full max-w-5xl items-center">
+                <div class="text-left bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-brand-green flex items-center"><i data-lucide="smartphone" class="w-6 h-6 mr-2"></i><span data-key="moat1Title">Superior Technology</span></h3>
+                    <p class="mt-2 text-brand-brown" data-key="moat1Desc">An easy-to-use app integrating AI, marketplace, and service booking.</p>
+                </div>
+                <div class="text-5xl font-bold text-gray-300">+</div>
+                <div class="text-left bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-brand-green flex items-center"><i data-lucide="handshake" class="w-6 h-6 mr-2"></i><span data-key="moat2Title">Unmatched Trust</span></h3>
+                    <p class="mt-2 text-brand-brown" data-key="moat2Desc">A hyper-local network of Krishi Mitras who will build deep, lasting relationships with farmers.</p>
+                </div>
+            </div>
+            <div class="slide-number">8 / 15</div>
+        </section>
+
+        <!-- Slide 9: Go-to-Market -->
+        <section id="slide-9" class="slide text-center">
+            <h2 class="text-brand-green" data-key="gtmTitle">Our Planned Go-To-Market Strategy.</h2>
+            <p class="text-brand-brown mt-4 max-w-4xl mx-auto text-lg" data-key="gtmDesc">Our expansion will be driven by a capital-efficient, Mitra-led model.</p>
+            <div class="mt-12 text-left w-full max-w-3xl space-y-6">
+                <div class="flex items-start space-x-4">
+                    <div class="bg-brand-green text-white rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center font-bold text-xl">1</div>
+                    <div>
+                        <h3 class="text-brand-green" data-key="gtm1Title">Recruit & Train Mitras</h3>
+                        <p class="text-brand-brown" data-key="gtm1Desc">Recruit and train our first cohort of Krishi Mitras in target districts based on their community standing and entrepreneurial drive.</p>
+                    </div>
+                </div>
+                 <div class="flex items-start space-x-4">
+                    <div class="bg-brand-green text-white rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center font-bold text-xl">2</div>
+                    <div>
+                        <h3 class="text-brand-green" data-key="gtm2Title">Launch Pilot Program</h3>
+                        <p class="text-brand-brown" data-key="gtm2Desc">Launch a pilot with a core set of services (e.g., Drone Spraying) in a limited cluster of villages to refine operations.</p>
+                    </div>
+                </div>
+                 <div class="flex items-start space-x-4">
+                    <div class="bg-brand-green text-white rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center font-bold text-xl">3</div>
+                    <div>
+                        <h3 class="text-brand-green" data-key="gtm3Title">Scale & Expand</h3>
+                        <p class="text-brand-brown" data-key="gtm3Desc">Use the learnings from the pilot to scale the Mitra network and expand service offerings district by district.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">9 / 15</div>
+        </section>
+
+        <!-- Slide 10: The Team -->
+        <section id="slide-10" class="slide text-center">
+            <h2 class="text-brand-green" data-key="teamTitle">The Founder Behind the Mission.</h2>
+            <div class="mt-12 grid grid-cols-1 gap-12 w-full max-w-xl">
+                <div class="text-center">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg" src="https://i.postimg.cc/YqPSZGXd/kumod-image.jpg?q=100&w=2070&auto=format&fit=crop" alt="Founder Kumod Yadav" onerror="this.onerror=null;this.src='https://placehold.co/128x128/e2e8f0/4a5568?text=KY';">
+                    <h3 class="font-bold text-xl text-brand-green" data-key="team1Name">Kumod Yadav</h3>
+                    <p class="text-brand-brown font-semibold" data-key="team1Role">Founder & CEO</p>
+                    <p class="text-sm text-gray-600 mt-2" data-key="team1Desc">Deeply passionate about solving agricultural challenges with technology. Combines on-ground experience from his community in Bihar with a vision for scalable, tech-driven solutions.</p>
+                </div>
+            </div>
+            <div class="slide-number">10 / 15</div>
+        </section>
+
+        <!-- Slide 11: Financial Projections -->
+        <section id="slide-11" class="slide text-center">
+            <h2 class="text-brand-green" data-key="financialsTitle">Our Path to Growth.</h2>
+            <p class="text-brand-brown mt-4 max-w-4xl mx-auto text-lg" data-key="financialsDesc">We project strong growth in key metrics over the next 3 years post-launch, reaching operational breakeven by the end of Year 3.</p>
+            <div class="mt-8 w-full max-w-4xl bg-white p-6 rounded-lg shadow-lg">
+                <!-- Placeholder for a chart -->
+                <div class="h-64 flex items-center justify-center bg-gray-100 rounded">
+                    <p class="text-gray-500">Financial Projections Chart (Revenue, Users, GMV)</p>
+                </div>
+            </div>
+            <div class="slide-number">11 / 15</div>
+        </section>
+
+        <!-- Slide 12: The Ask -->
+        <section id="slide-12" class="slide text-center">
+            <h2 class="text-brand-green" data-key="askTitle">We Are Raising a Pre-Seed Round.</h2>
+            <div class="mt-12 bg-green-100 border-4 border-dashed border-brand-green p-12 rounded-lg">
+                <p class="text-6xl font-extrabold text-brand-green">₹2 Crore</p>
+                <p class="mt-2 text-brand-brown text-xl" data-key="askDesc">for an 18-month runway to build the product and launch our pilot.</p>
+            </div>
+            <div class="slide-number">12 / 15</div>
+        </section>
+
+        <!-- Slide 13: Use of Funds -->
+        <section id="slide-13" class="slide text-center">
+            <h2 class="text-brand-green" data-key="fundsTitle">Allocation of Funds.</h2>
+            <p class="text-brand-brown mt-4 max-w-4xl mx-auto text-lg" data-key="fundsDesc">This investment will be used to build our core product, hire a foundational team, and launch our pilot program.</p>
+             <div class="mt-8 w-full max-w-4xl grid md:grid-cols-2 gap-8 items-center">
+                <!-- Placeholder for a pie chart -->
+                <div class="h-64 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <p class="text-gray-500">Use of Funds Pie Chart</p>
+                </div>
+                <ul class="text-left space-y-4">
+                    <li class="flex items-center"><span class="w-4 h-4 rounded-full bg-green-700 mr-3"></span><div><strong data-key="fund1Title">60% Technology & Product:</strong><span> </span><span data-key="fund1Desc">App/platform development, AI models.</span></div></li>
+                    <li class="flex items-center"><span class="w-4 h-4 rounded-full bg-green-500 mr-3"></span><div><strong data-key="fund2Title">25% Team Hiring:</strong><span> </span><span data-key="fund2Desc">Hire 2-3 core engineers and an operations lead.</span></div></li>
+                    <li class="flex items-center"><span class="w-4 h-4 rounded-full bg-green-300 mr-3"></span><div><strong data-key="fund3Title">15% Pilot Launch & Operations:</strong><span> </span><span data-key="fund3Desc">Mitra training and initial farmer acquisition.</span></div></li>
+                </ul>
+            </div>
+            <div class="slide-number">13 / 15</div>
+        </section>
+
+        <!-- Slide 14: Vision -->
+        <section id="slide-14" class="slide text-center">
+            <h2 class="text-brand-green" data-key="visionTitle">Our Vision for the Future.</h2>
+            <p class="text-brand-brown mt-4 max-w-4xl mx-auto text-2xl italic" data-key="visionDesc">"To become the essential digital backbone for rural India, empowering every farmer with the tools to build a prosperous and sustainable future."</p>
+            <div class="slide-number">14 / 15</div>
+        </section>
+
+        <!-- Slide 15: Thank You -->
+        <section id="slide-15" class="slide bg-brand-green text-white text-center">
+            <h1 class="text-6xl font-extrabold" data-key="thanksTitle">Thank You.</h1>
+            <p class="mt-4 text-2xl" data-key="thanksSubtitle">Let's grow India's future, together.</p>
+            <div class="mt-8 text-lg">
+                <p>Kumod Yadav</p>
+                <p>Founder, Krishikaam</p>
+                <a href="mailto:kumod353@gmail.com" class="mt-2 inline-block hover:underline">kumod353@gmail.com</a>
+            </div>
+            <div class="slide-number text-gray-300">15 / 15</div>
+        </section>
+
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <button id="prev-slide" class="nav-button hidden">
+        <i data-lucide="arrow-up"></i>
+    </button>
+    <button id="next-slide" class="nav-button">
+        <i data-lucide="arrow-down"></i>
+    </button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            lucide.createIcons();
+
+            const slideContainer = document.querySelector('.slide-container');
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-slide');
+            const nextBtn = document.getElementById('next-slide');
+            let currentSlideIndex = 0;
+
+            function updateNavButtons() {
+                prevBtn.classList.toggle('hidden', currentSlideIndex === 0);
+                nextBtn.classList.toggle('hidden', currentSlideIndex === slides.length - 1);
+            }
+
+            function goToSlide(index) {
+                if (index >= 0 && index < slides.length) {
+                    slides[index].scrollIntoView({ behavior: 'smooth' });
+                    currentSlideIndex = index;
+                    // Note: The IntersectionObserver will handle the button updates
+                }
+            }
+
+            prevBtn.addEventListener('click', () => {
+                goToSlide(currentSlideIndex - 1);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                goToSlide(currentSlideIndex + 1);
+            });
+
+            // Observer to detect which slide is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const slideId = entry.target.id;
+                        // Find index from id like "slide-1"
+                        currentSlideIndex = Array.from(slides).findIndex(slide => slide.id === slideId);
+                        updateNavButtons();
+                    }
+                });
+            }, { threshold: 0.6 }); // Trigger when 60% of the slide is visible
+
+            slides.forEach(slide => {
+                observer.observe(slide);
+            });
+
+            // Initial state
+            updateNavButtons();
+        });
+    </script>
+</body>
+</html>
